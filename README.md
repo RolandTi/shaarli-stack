@@ -1,2 +1,2 @@
-# shaarli-bulle
-Shaarli Bulle is a theme for Shaarli, the personal, minimalist, bookmarking service
+# shaarli-stack
+Shaarli Stack is a theme for Shaarli, the personal, minimalist, bookmarking service
