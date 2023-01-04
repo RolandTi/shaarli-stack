@@ -1,0 +1,269 @@
+	<header id="the-header">
+
+	<div id="icon-navbar">
+		{if="$is_logged_in || $openshaarli"}
+		<a href="{$base_path}/admin/add-shaare" class="icon_button add-navbar" aria-label="{'Shaare'|t}">
+			<svg aria-hidden="true" width="21" height="21" style="overflow:visible;enable-background:new 0 0 21 21"><path class="svg-line svg-focus" d="M10.5 0v21M21 10.5H0" /></svg>
+		</a>
+		{/if}
+
+		<div class="reserve">{if="$previous_page_url"}
+		<a href="{$previous_page_url}" class="icon_button">
+			<svg viewbox="0 0 21 21" width="21" height="21"><rect class="svg-fill-empty" width="21" height="21" /><path class="svg-line" d="M13 17.5 6 10.5 13 3.5" /></svg>
+		</a>
+			{/if}
+		</div>
+	
+	<a href="{$titleLink}" class="icon_button" aria-label="{$shaarlititle}">
+			<svg aria-hidden="true" width="22" height="21" style="overflow:visible"><path class="svg-full" d="m12.7 1.9 1.6 5c.2.5.7.9 1.2.9h5.2c1.2 0 1.7 1.6.7 2.3l-4.2 3.1c-.4.3-.6.9-.5 1.4l1.6 5c.4 1.2-1 2.1-1.9 1.4l-4.2-3.1c-.4-.3-1-.3-1.5 0L6.5 21c-1 .7-2.3-.2-1.9-1.4l1.6-5c.2-.5 0-1.1-.5-1.4L1.5 10c-1-.7-.5-2.3.8-2.3h5.2c.5 0 1-.4 1.2-.9l1.6-5c.4-1.1 2-1.1 2.4.1z" /></svg>
+		</a>
+			
+		<!--	     <a href="#" class="menu-toggle" id="menu-toggle" aria-label="{'Menu'|t}"><s class="bar" aria-hidden="true"></s><s class="bar" aria-hidden="true"></s></a>-->
+		    
+		
+
+	   <div class="reserve"> {if="$next_page_url"}
+        <a href="{$next_page_url}" class="icon_button">
+			<svg viewbox="0 0 21 21" width="21" height="21"><rect class="svg-fill-empty" width="21" height="21" /><path class="svg-line" d="M8 3.5 15 10.5 8 17.5" /></svg>
+		</a>
+	   {/if}</div>
+
+		
+		<button class="toggle_nav icon_button" aria-expanded="false">
+			<span id="menu-icon-anime">
+			  <span></span>
+			  <span></span>
+			  <span></span>
+			  <span></span>
+			</span>
+		</button>
+	</div>
+	
+	<div id="actions" class="subheader-form">
+		<div class="nav_item_actions">
+			<a href="#" id="actions-delete" class="item_action">{'Delete'|t}</a>
+	        <a href="#" class="actions-change-visibility item_action" data-visibility="public">{'Set public'|t}</a>
+	        <a href="#" class="actions-change-visibility item_action" data-visibility="private">{'Set private'|t}</a>
+			<a href="#" class="subheader-opener button item_action" data-open-id="bulk-tag-action-add">{'Add tags'|t}</a>
+			<a href="#" class="subheader-opener button item_action" data-open-id="bulk-tag-action-delete">{'Delete tags'|t}</a>
+		</div>
+	</div>
+	
+	{$addDelete=['add', 'delete']}
+{loop="$addDelete"}
+<div id="bulk-tag-action-{$value}" class="subheader-form">
+  <form class="pure-g" action="{$base_path}/admin/shaare/update-tags" method="post">
+    <div class="pure-u-1">
+      <span>
+        <input
+          type="text" name="tag" class="autofocus"
+          aria-label="{$value === 'add' ? t('Tag to add') : t('Tag to delete')}"
+          placeholder="{$value === 'add' ? t('Tag to add') : t('Tag to delete')}"
+          autocomplete="off" data-multiple data-autofirst data-minChars="1"
+          data-list="{loop="$tags"}{$key}, {/loop}"
+        >
+        <input type="hidden" name="action" value="{$value}" />
+        <input type="hidden" name="id" value="" />
+        <input type="hidden" name="token" value="{$token}" />
+      </span>&nbsp;
+      <a href="" class="button action">
+        <i class="fa fa-tag" aria-hidden="true"></i>
+        {$value === 'add' ? t('Add tag') : t('Delete tag')}
+      </a>&nbsp;
+      <a href="" class="subheader-opener button cancel" data-open-id="actions">{'Cancel'|t}</a>
+    </div>
+  </form>
+</div>
+  {/loop}
+
+	
+	<nav id="nav-links">
+		<ul>
+			<li><a href="{$titleLink}"><span class="shaarli_title">{$shaarlititle}</span></a></li>
+			{if="$is_logged_in || $openshaarli"}
+			<!-- ADD SHAARE -->
+			<li><a href="{$base_path}/admin/add-shaare" id="shaarli-menu-shaare">{'Shaare'|t}</a>
+			</li>
+			{/if}
+		
+			<!-- HOMELINK -->
+			<li><a href="{$titleLink}" id="shaarli-menu-home">{'My links'|t}</a>
+			</li>
+		
+			<!-- TAGS -->
+			<li>
+				<a href="{$base_path}/tags/cloud" id="shaarli-menu-tags">{'Tags'|t}</a>
+			</li>
+			<!-- THUMBNAILS -->
+			{if="$thumbnails_enabled"}
+			<li>
+				<a href="{$base_path}/picture-wall?{function="ltrim($searchcrits, '&')"}" id="shaarli-menu-picwall">{'pics'|t}</a>
+			</li>
+			{/if}
+			<!-- DAILY -->
+			<li>
+				<a href="{$base_path}/daily" id="shaarli-menu-daily">{'Daily'|t}</a>
+			</li>
+			<!-- PLUGINS -->			
+			 {loop="$plugins_header.buttons_toolbar"}
+			<li>
+				<a
+		          {$value.attr.class=isset($value.class) ? $value.attr.class . ' pure-menu-link' : 'pure-menu-link'}
+		          {loop="$value.attr"}
+		            {$key}="{$value}"
+		          {/loop}>
+	            {$value.html}
+	          </a>
+			</li>
+			{/loop}
+			<!-- RSS -->			
+			<li>
+				<a href="{$base_path}/feed/{$feed_type}?{$searchcrits}" id="shaarli-menu-rss">RSS</a>
+			</li>
+			<!-- ADMIN -->			
+			{if="$is_logged_in || $openshaarli"}
+			<li>
+				<a href="{$base_path}/admin/tools" id="shaarli-menu-tools">{'Tools'|t}</a>
+			</li>
+			{/if}
+			<!-- LOGOUT -->			
+	        {if="$is_logged_in"}
+			<li>
+				<a href="{$base_path}/admin/logout" id="shaarli-menu-logout">{'Logout'|t}</a>
+			</li>
+	        {else}
+			<!-- LOGIN -->			
+			<li>
+				<a href="{$base_path}/login" id="shaarli-menu-login">{'Login'|t}</a>
+			</li>
+	        {/if}
+		</ul>
+	</nav>
+</header>
+
+<main id="content" class="container">
+<!-- SEARCH:START -->			
+	<div id="search" class="searchform-block header-search">
+		<form method="GET" class="pure-form searchform" name="searchform" action="{$base_path}/">
+			<input type="text" id="searchform_value" name="searchterm" aria-label="{'Search text'|t}" placeholder="{'Search text'|t}"
+		             {if="!empty($search_term)"}
+		             value="{$search_term}"
+		             {/if}
+		      >
+			
+			<input type="text" name="searchtags" id="tagfilter_value" aria-label="{'Filter by tag'|t}" placeholder="{'Filter by tag'|t}"
+		             {if="!empty($search_tags)"}
+		             value="{$search_tags}"
+		             {/if}
+		      autocomplete="off" data-multiple data-autofirst data-minChars="1"
+		      data-list="{loop="$tags"}{$key}, {/loop}"
+		      >
+			<button type="submit" class="search-button" aria-label="{'Search'|t}"><svg aria-hidden="true" viewbox="0 0 21 21" width="21" height="21"><rect class="svg-fill-empty" width="21" height="21" /><circle class="svg-line" cx="8.88" cy="8.79" r="6.5" /><line class="svg-line" x1="13.46" y1="13.4" x2="18.73" y2="18.68" /></svg></button>
+		</form>
+		<button class="button_filters" aria-expanded="false">
+			<svg width="21px" height="21px" viewBox="0 0 21 21">
+<rect width="21" height="21" class="svg-fill-empty" />
+<path class="svg-line-thin" d="M0.9,0.5c-0.2,0-0.3,0.1-0.4,0.2c-0.1,0.1-0.1,0.3,0,0.4l7,9.6V16c0,0.1,0.1,0.3,0.2,0.3l3.9,3.1
+	c0.1,0.1,0.3,0.1,0.5,0.1c0.1-0.1,0.2-0.2,0.2-0.4v-8.3l7-9.6c0.1-0.1,0.1-0.3,0-0.4c-0.1-0.1-0.2-0.2-0.4-0.2L0.9,0.5z"/>
+<line class="svg-line-thin" x1="2.6" y1="3.9" x2="17.4" y2="3.9"/>	
+</svg>
+
+		</button>
+	</div>
+<!-- SEARCH:END -->
+<!-- FILTERS:START -->
+<div class="sub-nav">{if="$is_logged_in"}
+  <a href="#" id="toggle_check" aria-label="{'Selection'|t}" title="{'Selection'|t}">
+	<svg aria-hidden="true" width="35" height="35" viewbox="0 0 35 35">
+		<rect class="svg-fill-empty" width="35" height="35" /><path class="svg-fill" d="M11.24,7.7a.69.69,0,0,0,.49-.21A.65.65,0,0,0,11.94,7l0-3.07a.74.74,0,0,0-.2-.5.75.75,0,0,0-.49-.21h0a.71.71,0,0,0-.5.21.69.69,0,0,0-.21.49V7a.66.66,0,0,0,.2.5A.75.75,0,0,0,11.24,7.7Z" /><path class="svg-fill" d="M6.28,11.26H3.21a.71.71,0,0,0-.49,1.2.72.72,0,0,0,.5.2l3.07,0h0a.7.7,0,0,0,.49-.2A.74.74,0,0,0,7,12,.69.69,0,0,0,6.28,11.26Z" /><path class="svg-fill" d="M6.08,5.81a.73.73,0,0,0-.49-.21h0a.71.71,0,0,0-.49.21.69.69,0,0,0,0,1L7.26,9a.69.69,0,0,0,1-1Z" /><path class="svg-fill" d="M21.3,18.18l4.64-2.12a.51.51,0,0,0-.05-.94L9.75,9.82l-.15,0h0a.51.51,0,0,0-.49.66l5.3,16.15a.51.51,0,0,0,.94,0L17.47,22l4.73,4.73a.51.51,0,0,0,.72,0L26,23.63a.5.5,0,0,0,0-.71Z" />
+	</svg>
+</a>
+    <a href="#" aria-label="{'Select all'|t}" title="{'Select all'|t}" class="filter-off select-all-button">
+	<svg aria-hidden="true" width="35" height="35" viewbox="0 0 35 35">
+		<rect class="svg-fill-empty" width="35" height="35" /><path class="svg-fill"  d="M17.5,8.08a9.42,9.42,0,1,0,9.42,9.42A9.42,9.42,0,0,0,17.5,8.08Zm6.19,6.32-6.5,6.49a.86.86,0,0,1-.6.25.89.89,0,0,1-.6-.25L12.11,17a.83.83,0,0,1,0-1.2.85.85,0,0,1,1.2,0l3.28,3.28,5.89-5.89a.86.86,0,0,1,1.21,1.21Z" />
+	</svg>
+</a>
+
+  <a href="{$base_path}/admin/visibility/private" aria-label="{'Only display private links'|t}" title="{'Only display private links'|t}" class="{if="$visibility==='private'"}filter-on{else}filter-off{/if}"
+  >
+	<svg aria-hidden="true" width="35" height="35" viewbox="0 0 35 35">
+		<rect class="svg-fill-empty" width="35" height="35" /><path class="svg-fill" d="M26.44,8.78a1.66,1.66,0,0,0-1.11-.48,1.68,1.68,0,0,0-1.17.51A1.7,1.7,0,0,0,23.68,10v6.41a.48.48,0,0,1-.41.48.46.46,0,0,1-.5-.46V6.33a1.66,1.66,0,0,0-.49-1.16,1.59,1.59,0,0,0-1.1-.48,1.69,1.69,0,0,0-1.66,1.7v8.83a.48.48,0,0,1-.41.48.47.47,0,0,1-.35-.12.49.49,0,0,1-.15-.34V5.37a1.66,1.66,0,0,0-.51-1.2,1.63,1.63,0,0,0-1.22-.45,1.66,1.66,0,0,0-1.18.51,1.68,1.68,0,0,0-.48,1.19v9.81a.46.46,0,0,1-.76.37.49.49,0,0,1-.15-.34V7.4A1.64,1.64,0,0,0,12.7,5.75,1.69,1.69,0,0,0,11,7.45V19.79L9.39,17.56a2,2,0,0,0-1.33-.78,2,2,0,0,0-1.49.38,2,2,0,0,0-.46,2.71l3,4.82A9.71,9.71,0,0,1,9.82,26l.06.13A8.65,8.65,0,0,0,26,25.28h0a18.92,18.92,0,0,0,.9-5.74V9.94a1.73,1.73,0,0,0-.48-1.16Z" />
+	</svg>
+</a>
+  
+  <a href="{$base_path}/admin/visibility/public" aria-label="{'Only display public links'|t}" title="{'Only display public links'|t}"
+     class="{if="$visibility==='public'"}filter-on{else}filter-off{/if}"
+  >
+	<svg aria-hidden="true" width="35" height="35" viewbox="0 0 35 35">
+		<rect class="svg-fill-empty" width="35" height="35" /><path class="svg-fill" d="M8.32,7.58a13.46,13.46,0,0,1,4-2.58,17.21,17.21,0,0,0-1.94,4.27A9.13,9.13,0,0,1,8.32,7.58ZM17,22.89V18H10.23A28.19,28.19,0,0,0,11,24.26,15.24,15.24,0,0,1,17,22.89Zm1,1V31a13.11,13.11,0,0,0,3-.45,14.29,14.29,0,0,0,2.7-5.31A14.08,14.08,0,0,0,18,23.89ZM24.77,18H18v4.89a15.24,15.24,0,0,1,6,1.37A27.61,27.61,0,0,0,24.77,18ZM11.28,25.24A14.29,14.29,0,0,0,14,30.55,13.11,13.11,0,0,0,17,31V23.89A14.08,14.08,0,0,0,11.28,25.24Zm-1-8.24H17V12.11a15.24,15.24,0,0,1-6-1.37A28.19,28.19,0,0,0,10.23,17ZM17,11.11V4a13.11,13.11,0,0,0-3,.45,14.29,14.29,0,0,0-2.7,5.31A14.08,14.08,0,0,0,17,11.11Zm4-6.66A13.11,13.11,0,0,0,18,4v7.11a14.08,14.08,0,0,0,5.72-1.35A14.29,14.29,0,0,0,21,4.45ZM25.77,18a29.11,29.11,0,0,1-.87,6.74,10.06,10.06,0,0,1,2.48,2A13.43,13.43,0,0,0,31,18ZM10.1,24.74A29.11,29.11,0,0,1,9.23,18H4a13.43,13.43,0,0,0,3.62,8.72A10.06,10.06,0,0,1,10.1,24.74ZM9.23,17a29.11,29.11,0,0,1,.87-6.74,10.06,10.06,0,0,1-2.48-2A13.43,13.43,0,0,0,4,17ZM8.32,27.42a13.46,13.46,0,0,0,4,2.58,16.85,16.85,0,0,1-1.94-4.27A9.13,9.13,0,0,0,8.32,27.42ZM24.9,10.26A29.11,29.11,0,0,1,25.77,17H31a13.43,13.43,0,0,0-3.62-8.72A10.06,10.06,0,0,1,24.9,10.26Zm-.28,15.47A16.85,16.85,0,0,1,22.68,30a13.46,13.46,0,0,0,4-2.58A9.13,9.13,0,0,0,24.62,25.73ZM18,12.11V17h6.77A27.61,27.61,0,0,0,24,10.74,15.24,15.24,0,0,1,18,12.11Zm8.68-4.53a13.46,13.46,0,0,0-4-2.58,17.21,17.21,0,0,1,1.94,4.27A9.13,9.13,0,0,0,26.68,7.58Z" />
+	</svg>
+</a>
+  {/if}
+  <a href="{$base_path}/untagged-only" aria-label="{'Filter untagged links'|t}" title="{'Filter untagged links'|t}"
+     class={if="$untaggedonly"}"filter-on"{else}"filter-off"{/if}
+  >
+	<svg aria-hidden="true" width="35" height="35" viewbox="0 0 35 35">
+		<rect class="svg-fill-empty" width="35" height="35" /><path class="svg-fill" d="M28.46,9.82,25.18,6.54h-7l-4.78,4.78L23.68,21.56l4.78-4.78ZM24,13.23A1.57,1.57,0,1,1,24,11,1.56,1.56,0,0,1,24,13.23Zm-12.67.21L21.56,23.68l-4.51,4.51a.92.92,0,0,1-1.3,0L6.81,19.25a.92.92,0,0,1,0-1.3ZM21.56,23.68l2.12-2.12,3.73,3.73a1.49,1.49,0,0,1,0,2.12,1.45,1.45,0,0,1-1.06.44,1.48,1.48,0,0,1-1.06-.44ZM13.44,11.32l-2.12,2.12L7.59,9.71A1.5,1.5,0,0,1,9.71,7.59Z" />
+	</svg>
+</a>
+  <a href="#" class="expand-all" aria-label="{'Expand all'|t}" title="{'Expand all'|t}">
+	<svg aria-hidden="true" width="35" height="35" viewbox="0 0 35 35">
+		<rect class="svg-fill-empty" width="35" height="35" />
+				<path class="svg-fill" d="M6.14,14.61l.79,10.84a2.83,2.83,0,0,0,2.62,2.62l10.84.79a.89.89,0,0,0,.69-1.51L7.65,13.92A.89.89,0,0,0,6.14,14.61Z" />
+		
+		<path class="svg-fill" d="M28.86,20.39,28.07,9.55a2.83,2.83,0,0,0-2.62-2.62L14.61,6.14a.89.89,0,0,0-.69,1.51L27.35,21.08A.89.89,0,0,0,28.86,20.39Z" />
+	</svg>
+	</a>
+</div>
+<!-- FILTERS:END -->			
+
+{if="!empty($newVersion) || !empty($versionError)"}
+<!-- ALERTE:NEW VERSION -->			
+<div class="pure-g new-version-message pure-alert pure-alert-warning pure-alert-closable">
+    {if="$newVersion"}
+		Shaarli {$newVersion} <a href="https://github.com/shaarli/Shaarli/releases">{'is available'|t}</a>.
+	{/if}
+	
+    {if="$versionError"}
+		{'Error'|t}: {$versionError}
+    {/if}
+	<span id="new-version-dismiss" class="pure-alert-close"><svg aria-hidden="true" width="21" height="21" viewbox="0 0 21 21"><circle class="svg-close" cx="10.5" cy="10.5" r="10"/><line class="svg-close" x1="6.5" y1="6.5" x2="14.5" y2="14.5"/><line class="svg-close" x1="14.5" y1="6.5" x2="6.5" y2="14.5"/></svg>
+</span>
+</div>
+{/if}
+
+{if="!empty($plugin_errors) && $is_logged_in"}
+<!-- ALERTE:PLUGINS -->			
+<div class="pure-g new-version-message pure-alert pure-alert-error pure-alert-closable" id="shaarli-errors-alert">
+	<div>{loop="plugin_errors"}<p>{$value}</p>{/loop}</div>	
+	<span class="pure-alert-close"><svg aria-hidden="true" width="21" height="21" viewbox="0 0 21 21"><circle class="svg-close" cx="10.5" cy="10.5" r="10"/><line class="svg-close" x1="6.5" y1="6.5" x2="14.5" y2="14.5"/><line class="svg-close" x1="14.5" y1="6.5" x2="6.5" y2="14.5"/></svg>
+</span>
+</div>
+{/if}
+	
+	{if="!empty($global_errors)"}
+<!-- ALERTE:GLOBAL -->			
+<div class="pure-g header-alert-message pure-alert pure-alert-error pure-alert-closable" id="shaarli-errors-alert">
+	{loop="$global_errors"}<p>{$value}</p>{/loop}
+	<span class="pure-alert-close"><svg aria-hidden="true" width="21" height="21" viewbox="0 0 21 21"><circle class="svg-close" cx="10.5" cy="10.5" r="10"/><line class="svg-close" x1="6.5" y1="6.5" x2="14.5" y2="14.5"/><line class="svg-close" x1="14.5" y1="6.5" x2="6.5" y2="14.5"/></svg>
+</span>
+</div>
+{/if}
+	
+{if="!empty($global_warnings)"}
+<!-- ALERTE:WARNING -->	
+<div class="pure-g header-alert-message pure-alert pure-alert-warning pure-alert-closable" id="shaarli-warnings-alert">
+	<div>{loop="global_warnings"}<p>{$value}</p>{/loop}</div>
+	<span class="pure-alert-close"><svg aria-hidden="true" width="21" height="21" viewbox="0 0 21 21"><circle class="svg-close" cx="10.5" cy="10.5" r="10"/><line class="svg-close" x1="6.5" y1="6.5" x2="14.5" y2="14.5"/><line class="svg-close" x1="14.5" y1="6.5" x2="6.5" y2="14.5"/></svg>
+</span>
+</div>
+{/if}
+
+{if="!empty($global_successes)"}
+<!-- ALERTE:SUCCESSES ALERT -->	
+<div class="pure-g header-alert-message new-version-message pure-alert pure-alert-success pure-alert-closable" id="shaarli-success-alert">
+	      {loop="$global_successes"}<p>{$value}</p>{/loop}
+	<span class="pure-alert-close"><svg aria-hidden="true" width="21" height="21" viewbox="0 0 21 21"><circle class="svg-close" cx="10.5" cy="10.5" r="10"/><line class="svg-close" x1="6.5" y1="6.5" x2="14.5" y2="14.5"/><line class="svg-close" x1="14.5" y1="6.5" x2="6.5" y2="14.5"/></svg>
+</span>
+</div>
+{/if}

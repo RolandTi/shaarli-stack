@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html{if="$language !== 'auto'"} lang="{$language}"{/if}>
+<head>{include="_inc/includes"}</head>
+<body class="tools-template">
+	{include="_inc/page.header"}
+	<form method="POST" action="{$base_path}/admin/export" name="exportform" id="exportform">
+		<h2 class="window-title">{include="_inc/back_button"}  {"Export Database"|t}</h2>
+		
+		<input type="hidden" name="token" value="{$token}">
+		
+		<div class="form-entry">
+			<label><span class="label-name">{'Selection'|t}</span></label>
+			
+			<div class="radio-buttons">
+				<div><input type="radio" name="selection" value="all" checked="checked">{'All'|t}</div>
+				
+				<div><input type="radio" name="selection" value="private">{'Private'|t}</div>
+				
+				<div><input type="radio" name="selection" value="public">{'Public'|t}</div>
+			</div>
+		</div>
+		
+		<div class="form-entry">
+			<label for="prepend_note_url"><span class="label-name">{'Prepend note permalinks with this Shaarli instance\'s URL'|t}</span>
+				<span class="label-desc">{'Useful to import bookmarks in a web browser'|t}</span></label>
+			
+			<input class="switch" type="checkbox" name="prepend_note_url" id="prepend_note_url" />
+		</div>
+		
+		<input type="submit" value="{'Export'|t}" class="margin-top">
+	</form>
+	
+	{include="_inc/page.footer"}
+</body>
+</html>

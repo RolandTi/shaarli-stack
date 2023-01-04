@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html{if="$language !== 'auto'"} lang="{$language}"{/if}>
+<head>{include="_inc/includes"}</head>
+<body>
+	{include="_inc/page.header"}
+	
+	{if="count($linksToDisplay)===0 && $is_logged_in"}
+	  <div class="alerte-rouge">{'There is no cached thumbnail.'|t}
+    <a href="{$base_path}/admin/thumbnails">{'Try to synchronize them.'|t}</a></div>
+	{/if}
+	
+	<div id="plugin_zone_start_picwall" class="plugin_zone">{loop="$plugin_start_zone"}{$value}{/loop}</div>
+	
+	<h2 class="window-title">{'Picture Wall'|t}</h2>
+	
+	<section id="picwall" class="picwall-container">
+
+    {loop="$linksToDisplay"}
+		
+		<figure>
+			<a href="{$value.real_url}">
+				<img loading="lazy"
+	      src="{$root_path}/{$value.thumbnail}#"
+	      alt="{$value.title_html}" width="{$thumbnails_width}" height="{$thumbnails_height}" />
+				
+				<figcaption>{$value.title}
+	        {loop="$value.picwall_plugin"}
+	          {$value}
+	        {/loop}</figcaption>
+			</a>
+		</figure>
+    {/loop}
+	</section>
+	
+	<div id="plugin_zone_end_picwall" class="plugin_zone">{loop="$plugin_end_zone"}{$value}{/loop}</div>
+	{include="_inc/page.footer"}
+</body>
+</html>
+

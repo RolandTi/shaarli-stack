@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html{if="$language !== 'auto'"} lang="{$language}"{/if}>
+<head>{include="_inc/includes"}</head>
+<body class="add_page">
+	{include="_inc/page.header"}
+	<section>
+		<h2 >{"Shaare a new link"|t}</h2>
+		
+		<form method="GET" action="{$base_path}/admin/shaare" name="addform" class="addform">
+			<label for="shaare">{'URL or leave empty to post a note'|t}</label>
+			<input type="url" name="post" id="shaare" class="autofocus">
+			<input type="submit" value="{'Add link'|t}">
+		</form>
+
+	</section>
+	
+	<section class="addlink-batch">
+		<details><summary><h2>{"Shaare multiple new links"|t}</h2></summary>
+			 {if="empty($async_metadata)"}<p class="alerte-rouge">{'Metadata asynchronous retrieval is disabled.'|t}
+		          {'We recommend that you enable the setting <em>general > enable_async_metadata</em> in your configuration file to use bulk link creation.'|t}</p>{/if}
+			
+			<form method="POST" action="{$base_path}/admin/shaare-batch" name="batch-addform" class="batch-addform">
+				<label for="urls">{'Add one URL per line to create multiple bookmarks.'|t}</label>
+				<textarea name="urls" id="urls"></textarea>
+				<label for="tags">{'Tags'|t}</label>
+				<input type="text" name="tags" id="tags" class="lf_input" data-list="{loop="$tags"}{$key}, {/loop}" data-multiple data-autofirst autocomplete="off">
+				<input type="hidden" name="private" value="0">
+				<div class="form-entry altform">
+		<label for="lf_private">{'Private'|t}</label>
+        <input class="switch" type="checkbox" name="private" {if="$default_private_links"} checked="checked"{/if}>
+      </div>
+	  
+				<input type="hidden" name="token" value="{$token}">
+				<input type="submit" value="{'Add links'|t}">
+			</form>
+		</details>
+	</section>
+	
+	{include="_inc/page.footer"}
+</body>
+</html>
