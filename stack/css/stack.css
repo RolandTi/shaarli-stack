@@ -1,11 +1,5 @@
 /* @override 
-	https://shaarli:8890/tpl/bubbles/css/bubbles.css?*
-	https://favs.rolandtisserand.fr/tpl/bubbles/css/bubbles.css?*
-	https://shaarli-lastest:8890/tpl/bubbles/css/bubbles.css?*
-	http://liens.rolandtisserand.fr/tpl/bubbles/css/bubbles.css?*
-	https://shaarli-bulles-230103:8890/tpl/bubbles/css/bubbles.css?*
-	http://liens.rolandtisserand.fr/tpl/stack/css/bubbles.css?*
-	http://liens.rolandtisserand.fr/tpl/stack/css/stack.css?*
+	https://liens.rolandtisserand.fr/tpl/stack/css/stack.css?*
  */
 
 :root {
@@ -666,10 +660,17 @@ input.rename-tag-input {
 	border-radius: 3rem;
 	padding-left: 1ch;
 	padding-right: 1ch;
+	padding-top: .5ch;
+	padding-bottom: .5ch;
 	font-size: 100% !important;
 word-break: keep-all;
 margin-bottom: 1ch !important;
 display: inline-block;
+}
+
+.cloudtag-container a:hover {
+	color: var(--dark-main-color);
+	background-color: var(--background-color);
 }
 
 a.count {
@@ -1262,6 +1263,11 @@ a:hover .svg-fill {
 
 .add-navbar {
 	background-color: var(--main-color);
+		padding-bottom: .5rem;
+		border-radius: 3rem;
+		width: 32px;
+		height: 32px;
+
 }
 
 /* @end */
@@ -1358,6 +1364,11 @@ a:hover .svg-fill {
 	border-radius: .8rem;
 }
 
+.linksperpage input.selected {
+	color: var(--dark-main-color);
+	border-color: var(--dark-main-color);
+}
+
 .options-title {
 	display: block;
 	padding-bottom: .5rem;
@@ -1422,7 +1433,6 @@ flex-grow : 1;
 
 #linklist :target {
 	scroll-margin-top: 3rem;
-	box-shadow: 0 3px 1rem rgba(68, 68, 68, 0.21);
 }
 
 .link-content .real_url {
@@ -1454,20 +1464,57 @@ flex-grow : 1;
 	flex-wrap: wrap;
 	list-style: none;
 	margin: 0;
+	margin-top: 1ch;
 	margin-bottom: 1ch;
 	padding: 0;
 	gap: 1rem;
-	font-size: 80%;
+	font-size: 1.5rem;
 }
+
+.tags-header-linklist {
+	display: none;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	list-style: none;
+	margin: 0;
+	margin-bottom: 1ch;
+	padding: 0;
+	gap: 1rem;
+	font-size: 1.2rem;
+}
+	
+	.tags-header-linklist a {
+	padding: 1ch;
+	padding-top: .5ch;
+	padding-bottom: .5ch;
+	border-radius: 3rem;
+	background-color: var(--transparent-color);
+	}
+	
+		.tags-header-linklist a:hover {
+			background-color: var(--dark-main-color);
+			color: var(--background-color);
+		}
 
 .linklist-item .tags a {
-	padding-right: 1ch;
-	border-radius: 1rem;
+	padding: 1ch;
+	padding-top: .5ch;
+	padding-bottom: .5ch;
+	border-radius: 3rem;
+	background-color: var(--dark-main-color);
+	color: var(--background-color);
 }
 
-.linklist-item .tags a::before {
-	content: "#";
+.linklist-item .tags a:hover {
+	background-color: var(--background-color);
+	color: var(--dark-main-color);
+	
 }
+
+/*.linklist-item .tags a::before {
+	content: "#";
+}*/
 
 .link-expand {
 	position: absolute;
@@ -1826,8 +1873,7 @@ flex-grow : 1;
 
 .picwall-container img {
 	display: block;
-	border-top-left-radius: 1rem;
-	border-top-right-radius: 1rem;
+	border-radius: 1rem;
 	max-width: 100%;
 	height: auto;
 	width: 100%;
@@ -2211,7 +2257,7 @@ hr {
 	}
 	
 	.shaarli_title {
-		padding-left: 0;
+		padding:0;
 	}
 	
 	.nav_item_actions {
@@ -2237,19 +2283,26 @@ hr {
 	}
 	
 	#linklist :target {
-		border-radius: 1rem;
-		border: 3px solid var(--color01);
+		border: .5rem solid var(--dark-main-color);
 	}
 	
 	#linklist header {
 		display: flex;
 		align-items: center;
-		padding-top: 1.5rem;
-		padding-bottom: 1.5rem;
+		padding-top: 1.2rem;
+		padding-bottom: 1.2rem;
 	}
 	
 	#linklist h2 {
 		font-weight: 300;
+	}
+	
+	.linklist-item .tags {
+		display: none;
+	}
+	
+	.tags-header-linklist {
+	display: inline-flex;
 	}
 	
 	#linklist .url-display {
@@ -2258,6 +2311,10 @@ hr {
 	
 	.linklist-item {
 		font-size: 125%;
+	}
+	
+	.linklist-item:hover {
+		outline: 2px solid var(--dark-main-color);
 	}
 	
 	.link_footer {
