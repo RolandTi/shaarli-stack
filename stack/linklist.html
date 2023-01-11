@@ -121,7 +121,7 @@
 				{/loop}
 			</ul>
 		{/if}
-		<p class="real_url"></p>
+		<p class="real_url" aria-hidden="true"></p>
 		{if="$value.description"}<div class="linklist-item-description">{$value.description}</div>{/if}
 	
             
@@ -195,6 +195,9 @@ for (i = 0; i < acc.length; i++) {
 		} else {
 			panel.style.maxHeight = panel.scrollHeight + "px";
 		}
+		var panelHeader = this.previousElementSibling;
+		panelHeader.classList.toggle("active-header");
+
 	});
 }
 </script>
