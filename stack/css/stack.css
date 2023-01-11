@@ -867,6 +867,22 @@ select {
 	margin-bottom: .5rem;
 	border-bottom-right-radius: 3rem;
 	border-bottom-left-radius: 3rem;
+	position: relative;
+}
+
+#the-header:after {
+	/* Gradient for horizontal scrolling indication */
+	display: inline-block;
+	z-index: 20;
+	position: absolute;	
+	height: 100%;
+	width: 5rem;
+	pointer-events: none;
+	content: " ";
+	background: linear-gradient(90deg, rgba(255,255,255,0) 0%, var(--background-color) 70%);
+	right: 0;
+	top: 0;
+	border-bottom-right-radius: 3rem;
 }
 
 #icon-navbar {
@@ -897,30 +913,6 @@ select {
 #nav-links ul::-webkit-scrollbar {
     display: none; /* for Chrome, Safari, and Opera */
 }
-
-#nav-links ul::after {
-	display: inline-block;
-	z-index: 20;
-	position: absolute;	
-	height: 100%;
-	width: 4rem;
-	pointer-events: none;
-}
-
-#nav-links ul::after {
-	content: " ";
-	background: linear-gradient(90deg, rgba(255,255,255,0) 0%, var(--background-color) 88%);
-	right: 0;
-	top: 0;
-	border-bottom-right-radius: 3rem;
-}
-
-/*#nav-links ul::before {
-	content: " ";
-	background: linear-gradient(0deg, rgba(255,255,255,0) 0%, var(--background-color) 88%);
-	padding-left: 0;
-	border-bottom-left-radius: 3rem;
-}*/
 
 #nav-links li {
 	display: flex;
