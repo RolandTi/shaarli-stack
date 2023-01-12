@@ -524,6 +524,9 @@ details summary {
 	margin-right: 1rem;
 	margin-left: 1rem;
 	margin-top: 1rem;
+	margin-bottom: 1rem;
+	padding-left: 2ch;
+	padding-right: 3ch;
 }
 
 #search-result-block .label-tag a {
@@ -599,7 +602,12 @@ details summary {
 	width: 100%;
 	justify-content: center;
 	margin-top: 2.4rem;
+	margin-bottom: 2.4rem;
 	gap: .5rem;
+}
+
+.tag-sort:first-of-type {
+	margin-bottom: 0;
 }
 
 .tag-sort a, .daily-nav a {
@@ -654,18 +662,28 @@ input.rename-tag-input {
 	color: var(--color-alerte);
 }
 
+.cloudtag-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap:.2vw;
+	align-content: stretch;
+}
+
 .cloudtag-container a {
-	background-color: var(--dark-main-color);
+	flex: 1;
+background-color: var(--dark-main-color);
 	color: var(--background-color);
 	border-radius: 3rem;
 	padding-left: 1ch;
 	padding-right: 1ch;
 	padding-top: .5ch;
 	padding-bottom: .5ch;
-	font-size: 100% !important;
+/*	font-size: 100% !important;*/
 word-break: keep-all;
 margin-bottom: 1ch !important;
 display: inline-block;
+text-align: center;
 }
 
 .cloudtag-container a:hover {
@@ -737,7 +755,9 @@ th {
 	border: none;
 	width: 100%;
 	padding: 1ch;
-	border-radius: .8rem;
+	padding-left: 2ch;
+	padding-right: 2ch;
+	border-radius: 3rem;
 	margin-bottom: 1ch;
 	background-color: var(--transparent-color);
 	color: var(--dark-main-color);
@@ -752,9 +772,9 @@ th {
 	background-color: var(--dark-main-color);
 	border-radius: 25px;
 	border: none;
-	padding: .5ch;
-	padding-left: 1.5ch;
-	padding-right: 1.5ch;
+	padding: 1ch;
+	padding-left: 2ch;
+	padding-right: 2ch;
 	margin-bottom: 2.4rem;
 	cursor: pointer;
 	transition: opacity 200ms ease-in-out 0s;
@@ -900,14 +920,18 @@ select {
 	width: 100%;
 	margin: 0;
 	padding: 0;
+	padding-left: 1ch;
 	text-transform: uppercase;
 	letter-spacing: .12rem;
 	font-size: 75%;
 	white-space: nowrap;
+		border-bottom-right-radius: 3rem;
+	border-bottom-left-radius: 3rem;
 	/* hide scrollbar but allow scrolling */
 	-ms-overflow-style: none; /* for Internet Explorer, Edge */
     scrollbar-width: none; /* for Firefox */
     overflow-y: scroll; 
+	
 }
 
 #nav-links ul::-webkit-scrollbar {
@@ -920,7 +944,7 @@ select {
 	justify-content: center;
 }
 
-#nav-links li a, .shaarli_title {
+#nav-links li a{
 	padding-right: 1.5rem;
 	padding-left: 1.5rem;
 	padding-top: .5rem;
@@ -1116,6 +1140,8 @@ input#tagfilter_value {
 	margin: 0;
 	border-radius: 3rem;
 	padding: 1ch;
+	padding-left: 2ch;
+	padding-right: 2ch;
 	border: 1px solid var(--dark-main-color);	
 }
 
@@ -2234,13 +2260,15 @@ hr {
 		display: flex;
 		font-size: inherit;
 		border-top: none;
-		padding-left: var(--normal-margin);
+		padding-left: 0;
 		padding-right: var(--normal-margin);
 	}
 	
 	#nav-links ul {
 		flex-direction: row;
 		font-size: 75%;
+		border-radius: 0rem;
+		padding-left: 0;
 	}
 	
 	#nav-links li {
