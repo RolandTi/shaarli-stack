@@ -666,23 +666,29 @@ input.rename-tag-input {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	gap:.2vw;
+	gap:.5ch;
 	align-content: stretch;
 }
 
 .cloudtag-container a {
 	flex: 1;
-background-color: var(--dark-main-color);
+	background-color: var(--dark-main-color);
 	color: var(--background-color);
 	border-radius: 3rem;
 	padding-left: 1ch;
 	padding-right: 1ch;
 	padding-top: .5ch;
 	padding-bottom: .5ch;
-/*	font-size: 100% !important;*/
-word-break: keep-all;
-margin-bottom: 1ch !important;
-display: inline-block;
+	word-break: keep-all;
+	margin-bottom: 1ch !important;
+	display: flex;
+	align-content: center;
+}
+
+.cloudtag-container a span {
+display: block;
+width: 100%;
+align-self: center;
 text-align: center;
 }
 
@@ -691,9 +697,6 @@ text-align: center;
 	background-color: var(--background-color);
 }
 
-a.count {
-	display: none;
-}
 /* @end */
 
 /* @group Forms */
