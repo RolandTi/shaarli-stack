@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html{if="$language !== 'auto'"} lang="{$language}"{/if}>
+<head>{include="_inc/includes"}</head>
+<body class="tools-template">
+	{include="_inc/page.header"}
+
+<form method="POST" action="{$base_path}/admin/configure" name="configform" id="configform" class="adminform">
+	<div class="page-form page-form-complete">
+
+<h2 class="window-title">{include="_inc/back_button"} {'Configure'|t}</h2>
+		<input type="submit" value="{'Save'|t}" name="save" class="submit-sticky">
+		
+		<div class="form-entry">
+			<label for="title" class="label-name">Shaarli {'title'|t}</label>
+			
+			<input type="text" name="title" id="title" size="50" value="{$title}">
+		</div>
+		
+		<div class="form-entry">
+			<label for="titleLink" class="label-name">{'Home link'|t} <span>{'Default value'|t}: {$base_path}/</span></label>
+			
+			<input type="text" name="titleLink" id="titleLink" size="50" value="{$titleLink}">
+		</div>
+		
+		<div class="form-entry">
+			<label for="theme" class="label-name">{'Theme'|t}</label>
+			
+			<select name="theme" id="theme" class="align">{loop="$theme_available"}
+				<option value="{$value}"
+		          {if="$value===$theme"}
+		            selected="selected"
+		          {/if}
+		        >{$value|ucfirst}</option>
+		        {/loop}
+			</select>
+		</div>
+		
+		<div class="form-entry">
+			<label for="formatter" class="label-name">{'Description formatter'|t}</label>
+			
+			<select name="formatter" id="formatter" class="align">{loop="$formatter_available"}
+				<option value="{$value}"
+		          {if="$value===$formatter"}
+		            selected="selected"
+		          {/if}
+		        >{$value|ucfirst}</option>
+		        {/loop}
+			</select>
+		</div>
+		
+		<div class="form-entry">
+			<label for="language" class="label-name">{'Language'|t}</label>
+			
+			<select name="language" id="language" class="align">{loop="$languages"}
+				<option value="{$key}"
+                {if="$key===$language"}
+                selected="selected"
+                {/if}
+          >{$value}</option>
+	              {/loop}
+			</select>
+		</div>
+		
+		<div class="form-entry">
+			<label ><span class="label-name">{'Timezone'|t}</span> <span>{'Continent'|t} &middot; {'City'|t}</span></label>
+			
+			<select id="continent" name="continent">{loop="$continents"}
+                  {if="$key !== 'selected'"}
+				<option value="{$value}" {if="$continents.selected === $value"}selected{/if}>{$value}</option>
+                  {/if}
+                {/loop}
+			</select>
+			
+			<select id="city" name="city">{loop="$cities"}
+                  {if="$key !== 'selected'"}
+				<option value="{$value.city}"
+                {if="$cities.selected === $value.city"}selected{/if}
+                data-continent="{$value.continent}">{$value.city}</option>
+                  {/if}
+                {/loop}
+			</select>
+		</div>
+		
+		<div class="form-entry">
+			<label for="disablesessionprotection"><span class="label-name">{'Disable session cookie hijacking protection'|t}</span>
+	               <span class="label-desc">
+	                 {'Check this if you get disconnected or if your IP address changes often'|t}
+	               </span></label>
+			
+			<input class="switch" type="checkbox" name="disablesessionprotection" id="disablesessionprotection"
+            {if="$session_protection_disabled"}checked{/if}>
+		</div>
+		
+		<div class="form-entry">
+			<label for="privateLinkByDefault"><span class="label-name">{'Private links by default'|t}</span>
+				<span class="label-desc">{'All new links are private by default'|t}</span></label>
+			
+			<input class="switch" type="checkbox" name="privateLinkByDefault" id="privateLinkByDefault"
+            {if="$private_links_default"}checked{/if} />
+		</div>
+		
+		<div class="form-entry">
+			<label for="enableRssPermalinks"><span class="label-name">{'RSS direct links'|t}</span>
+				
+		<span class="label-desc">{'Check this to use direct URL instead of permalink in feeds'|t}</span></label>
+			
+			<input class="switch" type="checkbox" name="enableRssPermalinks" id="enableRssPermalinks"
+            {if="$enable_rss_permalinks"}checked{/if} />
+		</div>
+		
+		<div class="form-entry">
+			<label for="hidePublicLinks"><span class="label-name">{'Hide public links'|t}</span>
+				
+			<span class="label-desc">{'Do not show any links if the user is not logged in'|t}</span></label>
+			
+			<input class="switch" type="checkbox" name="hidePublicLinks" id="hidePublicLinks"
+            {if="$hide_public_links"}checked{/if} />
+		</div>
+		
+		<div class="form-entry">
+			<label for="updateCheck"><span class="label-name">{'Check updates'|t}</span>
+				<span class="label-desc">{'Notify me when a new release is ready'|t}</span></label>
+			
+			<input class="switch" type="checkbox" name="updateCheck" id="updateCheck"
+            {if="$enable_update_check"}checked{/if} />
+		</div>
+		
+		<div class="form-entry">
+			<label for="retrieveDescription"><span class="label-name">{'Automatically retrieve description for new bookmarks'|t}</span>
+				<span class="label-desc">{'Shaarli will try to retrieve the description from meta HTML headers'|t}</span></label>
+			
+			<input class="switch" type="checkbox" name="retrieveDescription" id="retrieveDescription"
+            {if="$retrieve_description"}checked{/if} />
+		</div>
+		
+		<div class="form-entry">
+			<label for="enableApi"><span class="label-name">{'Enable REST API'|t}</span>
+				<span class="label-desc">{'Allow third party software to use Shaarli such as mobile application'|t}</span></label>
+			
+			<input class="switch" type="checkbox" name="enableApi" id="enableApi"
+            {if="$api_enabled"}checked{/if} />
+		</div>
+		
+		<div class="form-entry">
+			<label for="apiSecret">{'API secret'|t}</label>
+			
+			<input type="text" name="apiSecret" id="apiSecret" size="50" value="{$api_secret}">
+		</div>
+		
+		<div class="form-entry">
+			<label for="enableThumbnails"><span class="label-name">{'Enable thumbnails'|t}</span>
+				<span class="label-desc">
+                {if="! $gd_enabled"}
+                  {'You need to enable the extension <code>php-gd</code> to use thumbnails.'|t}
+                {elseif="$thumbnails_enabled"}
+                  <a href="{$base_path}/admin/thumbnails">{'Synchronize thumbnails'|t}</a>
+                {/if}
+              </span></label>
+			
+			<select name="enableThumbnails" id="enableThumbnails" class="align">
+				<option value="all"    {if="$thumbnails_mode=='all'"}selected{/if}>{'All'|t}</option>
+				
+				<option value="common" {if="$thumbnails_mode=='common'"}selected{/if}>{'Only common media hosts'|t}</option>
+				
+				<option value="none"   {if="$thumbnails_mode=='none'"}selected{/if}>{'None'|t}</option>
+			</select>
+		</div>
+	</div>
+	
+	<input type="hidden" name="token" value="{$token}">
+</form>
+	
+	{include="_inc/page.footer"}
+</body>
+</html>
+

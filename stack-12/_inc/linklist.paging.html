@@ -1,0 +1,66 @@
+{if="count($links)>1"}
+<div class="linklist-paging">{if="!empty($action_plugin)"}
+      {loop="$action_plugin"}
+        {$value.attr.class=isset($value.attr.class) ? $value.attr.class : ''}
+        {$value.attr.class=!empty($value.on) ? $value.attr.class .' filter-on' : $value.attr.class .' filter-off'}
+        <a
+          {loop="$value.attr"}
+            {$key}="{$value}"
+          {/loop}>
+          {$value.html}
+        </a>
+      {/loop}
+    {/if}
+	
+	<div class="navigation">{if="$previous_page_url"}
+		<a href="{$previous_page_url}" class="icon_button">
+			<svg viewBox="0 0 26 26" width="26" height="26">
+				<rect width="26" height="26" class="svg-fill-empty" />
+				<polyline class="svg-line" points="10,8.2 4.8,13.4 10,18.6 " />
+				<line class="svg-line" x1="4.9" y1="13.4" x2="21.8" y2="13.4" />
+			</svg>
+		</a>
+	    {/if}
+	    {if="$next_page_url"}
+	    <a href="{$next_page_url}" class="icon_button">
+			<svg viewBox="0 0 26 26" width="26" height="26">
+				<rect width="26" height="26" class="svg-fill-empty" />
+				<polyline class="svg-line" points="17.3,18.7 22.2,13.4 16.7,8.1 " />
+				<line class="svg-line" x1="4.9" y1="13.4" x2="21.8" y2="13.4" />
+			</svg>
+		</a>
+	    {/if}
+		         {if="$page_max>1"}<span class="pagination">{$page_current} / {$page_max}</span>{/if}</div>
+	
+	<div class="options">
+		<div class="linksperpage">
+			<span class="options-title">{'Links per page'|t}</span>
+			<ul>
+				<li><a href="{$base_path}/links-per-page?nb=20"
+					{if="$links_per_page == 20"}class="selected"{/if}>20</a></li>
+				<li><a href="{$base_path}/links-per-page?nb=50"
+					{if="$links_per_page == 50"}class="selected"{/if}>50</a></li>
+				<li><a href="{$base_path}/links-per-page?nb=100"
+					{if="$links_per_page == 100"}class="selected"{/if}>100</a></li>
+				<li>
+					<form method="GET" action="{$base_path}/links-per-page">
+						<input type="text" name="nb" placeholder="133"
+						{if="$links_per_page != 20 && $links_per_page != 50 && $links_per_page != 100"}
+							value="{$links_per_page}" class="selected"{/if}>
+					</form>
+				</li>
+			</ul>
+		</div>
+		<div class="filtering">
+			<span class="options-title">{'Filters'|t}</span>
+			<ul>
+			{if="$is_logged_in"}
+			<li><a href="{$base_path}/admin/visibility/private" class="{if="$visibility==='private'"}filter-on{else}filter-off{/if}">{'Only display private links'|t}</a></li>
+			<li><a href="{$base_path}/admin/visibility/public" class="{if="$visibility==='public'"}filter-on{else}filter-off{/if}">{'Only display public links'|t}</a></li>
+			{/if}
+			<li><a href="{$base_path}/untagged-only" class={if="$untaggedonly"}"filter-on"{else}"filter-off"{/if}>{'Filter untagged links'|t}</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+ {/if}

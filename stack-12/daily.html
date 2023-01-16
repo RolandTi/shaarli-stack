@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html{if="$language !== 'auto'"} lang="{$language}"{/if}>
+<head>
+  {include="_inc/includes"}
+</head>
+<body id="daily">
+{include="_inc/page.header"}
+
+<div class="tag-sort">
+	<a href="{$base_path}/daily?day">{'Daily'|t}</a>
+	<a href="{$base_path}/daily?week">{'Weekly'|t}</a>
+	<a href="{$base_path}/daily?month">{'Monthly'|t}</a>
+</div>
+
+<h2 class="window-title">{$localizedType} Shaarli <a href="{$base_path}/daily-rss?{$type}" title="{function="t('1 RSS entry per :type', '', 1, 'shaarli', [':type' => t($type)])"}"><svg aria-hidden="true" viewbox="0 0 16 16" width="26" height="26"><rect class="svg-fill-empty" width="16" height="16" /><rect class="svg-line-thin" x="2" y="2" width="12" height="12" rx="2.29" /><path class="svg-line-thin" d="M4.7,4.39a6.92,6.92,0,0,1,6.91,6.91" /><path class="svg-line-thin" d="M4.7,7.24A4.06,4.06,0,0,1,8.76,11.3" /><path class="svg-line-thin" d="M4.7,10.1v1.2H5.9A1.2,1.2,0,0,0,4.7,10.1Z" /></svg></a>
+</h2>
+
+
+<div id="plugin_zone_start_daily" class="plugin_zone">
+  {loop="$plugin_start_zone"}
+    {$value}
+  {/loop}
+</div>
+
+    <div class="daily-about">
+
+      <div class="daily-nav">
+          {if="$previousday"}
+            <a href="{$base_path}/daily?{$type}={$previousday}">
+              {function="t('Previous :type', '', 1, 'shaarli', [':type' => t($type)], true)"}
+            </a>
+          {/if}
+          {if="$nextday"}
+            <a href="{$base_path}/daily?{$type}={$nextday}">
+              {function="t('Next :type', '', 1, 'shaarli', [':type' => t($type)], true)"}
+            </a>
+          {/if}
+      </div>
+      <div>
+        <h3 class="window-subtitle">
+          {$dayDesc}
+        </h3>
+
+        <div id="plugin_zone_about_daily" class="plugin_zone">
+          {loop="$daily_about_plugin"}
+            {$value}
+          {/loop}
+        </div>
+      </div>
+    </div>
+
+
+    {if="$linksToDisplay"}
+      <div class="col-3">
+        {loop="$cols"}
+          {if="isset($value[0])"}
+            <div>
+              {loop="value"}
+                {$link=$value}
+                <div class="daily-entry">
+                  <div class="daily-entry-title center">
+                    <a href="{$base_path}/?{$link.shorturl}" title="{'Permalink'|t}">
+                      <i class="fa fa-link"></i>
+                    </a>
+                    <a href="{$link.real_url}">{$link.title}</a>
+                  </div>
+                  {if="$thumbnails_enabled && !empty($link.thumbnail)"}
+                    <div class="daily-entry-thumbnail">
+                      <img
+                           src="{$root_path}/{$link.thumbnail}#"
+                           alt="thumbnail" width="{$thumbnails_width}" height="{$thumbnails_height}" />
+                    </div>
+                  {/if}
+                  <div class="daily-entry-description">{$link.formatedDescription}</div>
+                  {if="$link.tags"}
+                    <div class="daily-entry-tags center">
+                      {loop="link.taglist"}
+                        <span class="label label-tag">
+                          {$value}
+                        </span>
+                      {/loop}
+                    </div>
+                  {/if}
+                  <div class="dailyEntryFooter clear">
+                    {loop="$link.link_plugin"}
+                      {$value}
+                    {/loop}
+                  </div>
+                </div>
+              {/loop}
+            </div>
+          {/if}
+        {/loop}
+      </div>
+    {else}
+      <div class="dailyNoEntry">No articles on this day.</div>
+    {/if}
+
+    <div class="clear"></div>
+
+    <div id="plugin_zone_end_picwall" class="plugin_zone">
+      {loop="$plugin_end_zone"}
+        {$value}
+      {/loop}
+    </div>
+{include="_inc/page.footer"}
+</body>
+</html>
+
