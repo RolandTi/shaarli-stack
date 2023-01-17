@@ -1473,13 +1473,13 @@ transition: font-size 100ms ease-out 0s;
 	position: relative;
 }
 
-@media screen and (min-width:1200px) {
+/*@media screen and (min-width:1200px) {
 	.linklist-item {
 		padding-left: 5vw;
 		padding-bottom: 2vh;
 		padding-top: 2vh;
 	}
-}
+}*/
 
 
 .linklist-item:last-child {
