@@ -239,6 +239,7 @@ Correct the inability to style clickable types in iOS and Safari.
 
 button, [type='button'], [type='reset'], [type='submit'] {
 	-webkit-appearance: button;
+	appearance: button;
 }
 
 /**
@@ -913,6 +914,12 @@ padding-bottom: 5vw;
 	right: 0;
 	top: 0;
 	border-bottom-right-radius: 3rem;
+}
+
+@media (min-width:768px) {
+#the-header:after {
+display: none;
+}	
 }
 
 #icon-navbar {
@@ -2177,11 +2184,13 @@ box-shadow: 0 1px 8px rgba(75, 75, 75, 0.49);
 }
 
 .switch::before {
-	background-color: #ffffff;
+	background-color: var(--transparent-color);
+	border: 1px solid var(--dark-main-color);
 }
 
 .switch::after {
-	background: #ffffff;
+	background-color: var(--background-color);
+	border: 1px solid #333;
 }
 
 .switch:checked {
@@ -2281,7 +2290,11 @@ hr {
 	#nav-links li {
 		border-bottom: none;
 	}
-	
+
+	.admin-li {
+		margin-left: auto;
+	}
+
 	.shaarli_title {
 		padding:0;
 	}
