@@ -1,5 +1,6 @@
 /* @override 
 	https://liens.rolandtisserand.fr/tpl/stack/css/stack.css?*
+	https://shaarli-230304:8890/tpl/stack/css/stack.css?*
  */
 
 :root {
@@ -961,6 +962,18 @@ display: none;
 	justify-content: center;
 }
 
+
+/* Quick fix to make the last item out of gradient */
+#nav-links li:last-child {
+		padding-right: 8ch;
+}
+
+@media (min-width:768px) {
+#nav-links li:last-child {
+		padding-right: 0;	
+}	
+}
+
 #nav-links li a{
 	padding-right: 1.5rem;
 	padding-left: 1.5rem;
@@ -1597,6 +1610,8 @@ transition: font-size 100ms ease-out 0s;
 #linklist .full-post h2 {
 	font-size: 2.5rem;
 	font-weight: 400;
+	/* Remove the … */
+	white-space: normal;
 }
 
 #linklist .full-post {
@@ -1607,7 +1622,6 @@ transition: font-size 100ms ease-out 0s;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	align-items: stretch;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 	justify-content: center;
@@ -1615,16 +1629,11 @@ transition: font-size 100ms ease-out 0s;
 }
 
 .nav_item_actions .item_action {
-	display: flex;
-	flex-direction: column;
 	font-size: 1.2rem;
 	color: var(--dark-main-color);
-	border: 1px solid var(--dark-main-color);
-	border-radius: .5rem;
 	padding: .5rem;
 	text-align: center;
-	align-items: flex-end;
-	transition: background 100ms ease-in-out 0s;
+	transition: opacity 200ms ease-in-out 0s;
 	opacity: .5;
 }
 
@@ -1702,6 +1711,7 @@ transition: font-size 100ms ease-out 0s;
 	background-color: var(--background-color);
 	border-radius: 3rem;
 	margin-bottom: .5rem;
+	padding-bottom: var(--normal-margin);
 }
 
 .tools-section {
@@ -1727,17 +1737,13 @@ transition: font-size 100ms ease-out 0s;
 }
 
 .tools-section li:hover {
-	background-color: var(--background-color);
+	background-color: var(--main-color);
 }
 
 .tools-section a {
 	display: flex;
 	flex-grow: 2;
 	border-radius: 5px;
-}
-
-.tools-section a:hover {
-	color: var(--main-color);
 }
 
 .tools-bookmarklets {
@@ -2336,6 +2342,8 @@ hr {
 	
 	#linklist h2 {
 		font-weight: 300;
+			/* Remove the … */
+	white-space: normal;
 	}
 	
 	.linklist-item .tags {
