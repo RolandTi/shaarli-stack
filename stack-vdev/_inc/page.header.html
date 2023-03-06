@@ -121,12 +121,12 @@
 			</li>
 			{/loop}
 			<!-- RSS -->			
-			<li>
+			<li class="rss-li">
 				<a href="{$base_path}/feed/{$feed_type}?{$searchcrits}" id="shaarli-menu-rss">RSS</a>
 			</li>
 			<!-- ADMIN -->			
 			{if="$is_logged_in || $openshaarli"}
-			<li class="admin-li">
+			<li>
 				<a href="{$base_path}/admin/tools" id="shaarli-menu-tools">{'Tools'|t}</a>
 			</li>
 			{/if}

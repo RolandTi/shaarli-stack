@@ -88,8 +88,8 @@
 	<header>
 		<h2>{if="$is_logged_in"}<span class="ctrl-checkbox" aria-hidden="true">
 			<input type="checkbox" class="link-checkbox rounded-checkbox" value="{$value.id}"></span>{/if}
-			{if="$value.sticky"}		<svg viewbox="0 0 21 21" width="21" height="21"><rect width="21" height="21" class="svg-fill-empty"/><polygon class="svg-fill" points="11.2,18 11.2,13.2 14.9,13.2 14.9,12.2 13.4,10.6 13.4,4.6 14.6,4.6 14.6,3 6.4,3 6.4,4.6 7.6,4.6 7.6,10.6 
-	6.1,12.2 6.1,13.2 9.8,13.2 9.8,18 "/></svg>{/if}
+			{if="$value.sticky"}		<svg width="9" height="15"><!--<rect width="21" height="21" class="svg-fill-empty"/>--><polygon class="svg-fill" points="5.2,15 5.2,10.2 8.9,10.2 8.9,9.2 7.4,7.6 7.4,1.6 8.6,1.6 8.6,0 0.4,0 0.4,1.6 1.6,1.6 1.6,7.6 0.1,9.2 0.1,10.2 
+	3.8,10.2 3.8,15 "/></svg>{/if}
 	<a href="{$value.real_url}" class="linklist-real-url"><span class="linklist-link">{$value.title_html}</span><span class="url-display">{$value.real_url}</span></a>
 		</h2>
 					{if="$value.tags"}
