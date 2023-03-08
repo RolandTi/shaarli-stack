@@ -2337,6 +2337,7 @@ hr {
 #plugin_zone_start_linklist div {
 	display: flex;
 	justify-content: center;
+	border-bottom: 1px solid var(--dark-main-color);
 }
 /* @group addlink */
 
@@ -2369,14 +2370,20 @@ hr {
 	padding-left: 1ch;
 	padding-right: 1ch;
 	border-radius: 3rem;
-	background-color: var(--transparent-color);
+	background-color: var(--dark-main-color);
+	color: var(--background-color);
 	white-space: nowrap;
-	transition: background 200ms ease-in-out 0s;
+	transition: background 200ms ease-in-out 0s,color 200ms ease-in-out 0s;
 }
 
 .favorite-tag:hover {
-			background-color: var(--dark-main-color);
-			color: var(--background-color);
+	background-color: var(--background-color);
+	color: var(--dark-main-color);
+}
+
+.related_links a {
+	font-weight: bold;
+	text-decoration: underline;
 }
 
 /* @end */
