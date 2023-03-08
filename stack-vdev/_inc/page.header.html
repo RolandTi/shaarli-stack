@@ -40,7 +40,7 @@
 	</div>
 	
 	<div id="actions" class="subheader-form">
-		<div class="nav_item_actions">
+		<div class="subheader_item_actions">
 			<a href="#" id="actions-delete" class="item_action">{'Delete'|t}</a>
 	        <a href="#" class="actions-change-visibility item_action" data-visibility="public">{'Set public'|t}</a>
 	        <a href="#" class="actions-change-visibility item_action" data-visibility="private">{'Set private'|t}</a>
@@ -79,11 +79,7 @@
 	
 	<nav id="nav-links">
 		<ul>
-			<li>
-				<!--<svg aria-hidden="true" width="45" height="45" viewBox="0 0 21 21">
-  <path d="M4.15,16v-.5h-.5v-3.5h.5v-1.5h.5v-1.5h.5v-1h-.5v.5h-.5v.5h-.5v.5h-.5v1h-.5v-1.5h.5v-1h.5v-.5h.5v-.5h-1v.5h-.5v.5h-.5v.5h-.5v.5h-.5v-1.5h.5v-.5h.5v-.5h-.5v-.5h.5v-.5h.5v-.5h2.5v.5h.5v.5h.5v-.5h.5v-.5h2v.5h.5v1h.5v.5h-.5v-.5h-2v.5h1v.5h1v2h-.5v1h-.5v-1h-.5v-.5h-.5v-.5h-.5v.5h-.5v2h-.5v4.5h-.5v.5h-1Zm-.5-9.5v-.5h-1.5v.5h1.5Zm1,0v-.5h-.5v.5h.5Zm.5,9v-4.5h.5v-2h-.5v1.5h-.5v1.5h-.5v.5h.5v.5h-.5v.5h.5v.5h-.5v.5h.5v.5h-.5v.5h1Zm0-8.5v-.5h-.5v.5h.5Zm.5-.5v-.5h-.5v.5h.5Zm.5,2.5v-1.5h-.5v1.5h.5Zm.5-2v-.5h-.5v.5h.5Zm1,1v-.5h-.5v.5h.5Zm.5,.5v-.5h-.5v.5h.5Z" class="svg-full" />
-  <path d="M9.35,16v-.5h1v-4h.5v-.5h.5v-.5h.5v-.5h.5v-.5h4.5v.5h.5v.5h.5v.5h.5v.5h.5v4h1v.5H9.35Zm5-.5v-3.5h-3.5v3.5h1v-2.5h1.5v2.5h1Zm-.5-4v-.5h-.5v-.5h-.5v-.5h-.5v.5h-.5v.5h-.5v.5h2.5Zm-1,4v-2h-.5v2h.5Zm1-5v-.5h-.5v.5h.5Zm.5,.5v-.5h-.5v.5h.5Zm.5-.5v-.5h-.5v.5h.5Zm0,1v-.5h-.5v.5h.5Zm.5-.5v-.5h-.5v.5h.5Zm3,4.5v-3.5h-3.5v3.5h3.5Zm-2.5-5v-.5h-.5v.5h.5Zm0,1v-.5h-.5v.5h.5Zm-.5,3v-1.5h2.5v1.5h-2.5Zm1-3.5v-.5h-.5v.5h.5Zm1,3v-.5h-1.5v.5h1.5Zm-.5-3.5v-.5h-.5v.5h.5Zm0,1v-.5h-.5v.5h.5Zm.5-.5v-.5h-.5v.5h.5Zm.5,.5v-.5h-.5v.5h.5Z" class="svg-full" />
-</svg>--><a href="{$titleLink}"><span class="shaarli_title">{$shaarlititle}</span></a></li>
+			<li><a href="{$titleLink}"><span class="shaarli_title">{$shaarlititle}</span></a></li>
 			{if="$is_logged_in || $openshaarli"}
 			<!-- ADD SHAARE -->
 			<li><a href="{$base_path}/admin/add-shaare" id="shaarli-menu-shaare">{'Shaare'|t}</a>

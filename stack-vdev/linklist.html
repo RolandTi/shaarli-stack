@@ -86,9 +86,24 @@
 		
 <article class="anchor linklist-item{if="$value.class"} {$value.class}{/if} {if="$value.sticky"}pinned{/if} {if="count($links)==1"}full-post{/if}" data-id="{$value.id}" id="{$value.shorturl}">							
 	<header>
+		 {if="$thumbnails_enabled && $value.thumbnail !== false"}
+              <div
+                class="linklist-item-thumbnail {if="$value.thumbnail === null"}hidden{/if}"
+                {if="$value.thumbnail === null"}data-async-thumbnail="1"{/if}
+              >
+                <div class="thumbnail">
+                  {ignore}RainTPL hack: put the 2 src on two different line to avoid path replace bug{/ignore}
+                  <a href="{$value.real_url}" aria-hidden="true" tabindex="-1">
+                  <img data-src="{$root_path}/{$value.thumbnail}#" class="b-lazy"
+                    src="" />
+                  </a>
+                </div>
+              </div>
+            {/if}
+
 		<h2>{if="$is_logged_in"}<span class="ctrl-checkbox" aria-hidden="true">
 			<input type="checkbox" class="link-checkbox rounded-checkbox" value="{$value.id}"></span>{/if}
-			{if="$value.sticky"}		<svg width="9" height="15"><!--<rect width="21" height="21" class="svg-fill-empty"/>--><polygon class="svg-fill" points="5.2,15 5.2,10.2 8.9,10.2 8.9,9.2 7.4,7.6 7.4,1.6 8.6,1.6 8.6,0 0.4,0 0.4,1.6 1.6,1.6 1.6,7.6 0.1,9.2 0.1,10.2 
+			{if="$value.sticky"}		<svg width="9" height="15" class="pin-icon"><!--<rect width="21" height="21" class="svg-fill-empty"/>--><polygon class="svg-fill" points="5.2,15 5.2,10.2 8.9,10.2 8.9,9.2 7.4,7.6 7.4,1.6 8.6,1.6 8.6,0 0.4,0 0.4,1.6 1.6,1.6 1.6,7.6 0.1,9.2 0.1,10.2 
 	3.8,10.2 3.8,15 "/></svg>{/if}
 	<a href="{$value.real_url}" class="linklist-real-url"><span class="linklist-link">{$value.title_html}</span><span class="url-display">{$value.real_url}</span></a>
 		</h2>
@@ -179,8 +194,8 @@
 	</div>
 	
 	{include="_inc/page.footer"}
-<!--	<script src="{$asset_path}/js/thumbnails.min.js?v={$version_hash}#"></script>-->
-	{if="$is_logged_in && $async_metadata"}<script src="{$asset_path}/js/metadata.min.js?v={$version_hash}#"></script>{/if}
+<script src="{$asset_path}/js/thumbnails.min.js?v={$version_hash}#"></script>
+{if="$is_logged_in && $async_metadata"}<script src="{$asset_path}/js/metadata.min.js?v={$version_hash}#"></script>{/if}
 
 <script>
 // Show / Hide link details
@@ -222,6 +237,7 @@ check_all.addEventListener('click',()=>{
 })
 </script>
 {/if}
+
 <script>
 /* Toggle filters  */
 const toggle_filters = document.querySelector(".button_filters");
