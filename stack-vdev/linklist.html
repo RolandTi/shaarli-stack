@@ -245,92 +245,66 @@ const menu_filters = document.querySelector(".sub-nav");
 function toggleFilters() {
 	if (menu_filters.classList.contains("active")) {
 		menu_filters.classList.remove("active");
-//		toggle_filters.setAttribute('aria-expanded', 'false');
 	} else {
 		menu_filters.classList.add("active");
-//		toggle_filters.setAttribute('aria-expanded', 'true');
 	}
 }
 toggle_filters.addEventListener("click", toggleFilters, false);
 
-
-// Expand + LocalStorage
-//const largeButton = document.querySelector('.expand-all');
-const linkContent = document.querySelectorAll('.linklist-item');
-//const activeClass = "expanded-active";
-//largeButton.addEventListener("click", function() {
-//	this.classList.toggle(activeClass);
-//	linkContent.forEach(el => {
-//		el.classList.toggle('expanded-post');
-//	});
-//});
-//if (localStorage.getItem("details-state") === "open") {
-//	largeButton.classList.add(activeClass);
-//	linkContent.forEach(el => {
-//		el.classList.add('expanded-post');
-//	});
-//}
-//
-//largeButton.addEventListener("click", function() {
-//	if (largeButton.classList.contains(activeClass)) {
-//		localStorage.setItem("details-state", "open");
-//	} else {
-//		localStorage.setItem("details-state", "closed");
-//	}
-//});
-
-// Small / Medium / Large + Local Storage
-const s_ui_small = document.querySelector('.s_ui_small');
-const s_ui_medium = document.querySelector('.s_ui_medium');
-const s_ui_large = document.querySelector('.s_ui_large');
-const active_sml = "sml-active";
-
-// Small UI Button activation
-s_ui_small.addEventListener("click", function() {
-	localStorage.setItem("SML", "small");
-	linkContent.forEach(el => {
-		el.classList.add('s_small_post');
-		el.classList.remove('s_medium_post','s_large_post');
+(function(){ 
+	// Small / Medium / Large + Local Storage
+	const linkContent = document.querySelectorAll('.linklist-item');
+	const s_ui_small = document.querySelector('.s_ui_small');
+	const s_ui_medium = document.querySelector('.s_ui_medium');
+	const s_ui_large = document.querySelector('.s_ui_large');
+	const active_sml = "sml-active";
+	
+	// Small UI Button activation
+	s_ui_small.addEventListener("click", function() {
+		localStorage.setItem("SML", "small");
+		linkContent.forEach(el => {
+			el.classList.add('s_small_post');
+			el.classList.remove('s_medium_post','s_large_post');
+		});
 	});
-});
-
-// Medium UI Button activation
-s_ui_medium.addEventListener("click", function() {
-	localStorage.setItem("SML", "medium");
-	linkContent.forEach(el => {
-		el.classList.add('s_medium_post');
-		el.classList.remove('s_small_post','s_large_post');
+	
+	// Medium UI Button activation
+	s_ui_medium.addEventListener("click", function() {
+		localStorage.setItem("SML", "medium");
+		linkContent.forEach(el => {
+			el.classList.add('s_medium_post');
+			el.classList.remove('s_small_post','s_large_post');
+		});
 	});
-});
-
-// Large UI Button activation
-s_ui_large.addEventListener("click", function() {
-	localStorage.setItem("SML", "large");
-	linkContent.forEach(el => {
-		el.classList.add('s_large_post');
-		el.classList.remove('s_small_post','s_medium_post');
+	
+	// Large UI Button activation
+	s_ui_large.addEventListener("click", function() {
+		localStorage.setItem("SML", "large");
+		linkContent.forEach(el => {
+			el.classList.add('s_large_post');
+			el.classList.remove('s_small_post','s_medium_post');
+		});
 	});
-});
-
-// Check if S/M/L config exist
-if (localStorage.getItem("SML") === "small") {
-	linkContent.forEach(el => {
-		el.classList.add('s_small_post');
-	});
-}
-
-else if (localStorage.getItem("SML") === "medium") {
-	linkContent.forEach(el => {
-		el.classList.add('s_medium_post');
-	});
-}
-
-else if (localStorage.getItem("SML") === "large") {
-	linkContent.forEach(el => {
-		el.classList.add('s_large_post');
-	});
-}
-
+	
+	// Check if S/M/L config exist
+	if (localStorage.getItem("SML") === "small") {
+		linkContent.forEach(el => {
+			el.classList.add('s_small_post');
+		});
+	}
+	
+	else if (localStorage.getItem("SML") === "medium") {
+		linkContent.forEach(el => {
+			el.classList.add('s_medium_post');
+		});
+	}
+	
+	else if (localStorage.getItem("SML") === "large") {
+		linkContent.forEach(el => {
+			el.classList.add('s_large_post');
+		});
+	}
+})() 
 
 </script>
 </body>

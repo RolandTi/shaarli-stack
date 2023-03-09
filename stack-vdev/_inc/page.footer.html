@@ -54,21 +54,3 @@
 </script>
 
 <script src="{$asset_path}/js/shaarli.min.js?v={$version_hash}#"></script>
-<script>
-/* Toggle mobile menu */
-const toggle_nav = document.querySelector(".toggle_nav");
-const menu = document.querySelector("#nav-links");
-const icon_anime = document.querySelector("#menu-icon-anime");
-function toggleMenu() {
-	if (menu.classList.contains("active")) {
-		menu.classList.remove("active");
-		icon_anime.classList.remove("open");
-		toggle_nav.setAttribute('aria-expanded', 'false');
-	} else {
-		menu.classList.add("active");
-		icon_anime.classList.add("open");
-		toggle_nav.setAttribute('aria-expanded', 'true');
-	}
-}
-toggle_nav.addEventListener("click", toggleMenu, false);
-</script>

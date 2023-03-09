@@ -928,10 +928,6 @@ display: none;
 }	
 }
 
-#icon-navbar {
-	display: none;
-}
-
 #nav-links {
 	display: block;
 }
@@ -1554,6 +1550,10 @@ padding-bottom: 1rem;
 	font-size: 90%;
 	max-width: 90rem;
 	line-height: 1.5;
+}
+
+.linklist-item-description a {
+	text-decoration: underline;
 }
 
 .linklist-item .tags {
