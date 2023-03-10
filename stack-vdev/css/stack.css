@@ -2,6 +2,7 @@
 	https://liens.rolandtisserand.fr/tpl/stack/css/stack.css?*
 	https://shaarli-dev:8890/tpl/stack/css/stack.css?*
 	https://shaarli-dev:8890/tpl/stack/css/stack.css?*
+	https://shaarli-dev:8890/plugins/markdown_toolbar/includes/bootstrap/dist/css/bootstrap-pruned.min.css?*
  */
 
 :root {
@@ -560,6 +561,11 @@ details summary {
 	stroke: var(--background-color);
 }
 
+#search-result-block em {
+	font-weight: normal;
+	font-style: normal;
+}
+
 .shaarli_title {
 	font-weight: 600;
 	letter-spacing: .05ch;
@@ -800,12 +806,12 @@ th {
 	background-color: var(--color-alerte);
 	border-radius: 25px;
 	border: none;
-	padding: .5ch;
-	padding-left: 1ch;
-	padding-right: 1ch;
-	margin-bottom: 2ch;
+	padding: 1ch;
+	padding-left: 2ch;
+	padding-right: 2ch;
+	margin-bottom: 2.4rem;
 	cursor: pointer;
-	color: white;
+	color: var(--background-color);
 	transition: filter 200ms ease-in-out 0s;
 	filter: brightness(100%);
 }
@@ -1449,7 +1455,7 @@ padding-bottom: 1rem;
 
 #linklist h2 {
 	color: var(--dark-main-color);
-	display: inline-flex;
+	display: inline;
 	align-items: center;	
 	font-size: 100%;
 	font-weight: normal;
@@ -2011,6 +2017,9 @@ padding-bottom: 1.2rem;
 	height: auto;
 	width: 100%;
 	filter: brightness(97%);
+	aspect-ratio: 3 / 2;
+    object-fit: cover;
+    object-position: 50% 50%;
 }
 
 .picwall-container figcaption {
