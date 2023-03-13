@@ -405,7 +405,7 @@ html {
 	font-size: 62.5%;
 	line-height: 1.2;
 	color: var(--dark-main-color);
-	background-color: var(--dark-main-color);
+	background-color: var(--background-color);
 }
 
 body {
@@ -426,8 +426,6 @@ main {
 }
 
 .container {
-	background-color: var(--background-color);
-	border-radius: 3rem;
 	margin-bottom: .5rem;
 	flex-grow: 2;
 	display: flex;
@@ -435,8 +433,6 @@ main {
 }
 
 .homebody .container {
-	background-color: var(--dark-main-color);
-	border-radius: 0;
 	margin-bottom: 0;
 }
 
@@ -447,6 +443,10 @@ main {
 .no-padding main {
 	padding-left: 0;
 	padding-right: 0;
+}
+
+	#search, #the-header,.toolbar-plugin,#linklist,.navigation,.linklist-paging .options,#footer,.tools-template #content,.container,.sub-nav {
+	border-bottom: 1px solid var(--dark-main-color);
 }
 
 a {
@@ -903,13 +903,8 @@ padding-bottom: 5vw;
 
 #the-header {
 	width: 100%;
-	background-color: var(--background-color);
-	z-index: 500;
 	display: flex;
 	flex-direction: column;
-	margin-bottom: .5rem;
-	border-bottom-right-radius: 3rem;
-	border-bottom-left-radius: 3rem;
 	position: relative;
 }
 
@@ -925,7 +920,6 @@ padding-bottom: 5vw;
 	background: linear-gradient(90deg, rgba(255,255,255,0) 0%, var(--background-color) 70%);
 	right: 0;
 	top: 0;
-	border-bottom-right-radius: 3rem;
 }
 
 @media (min-width:768px) {
@@ -950,8 +944,6 @@ display: none;
 	letter-spacing: .12rem;
 	font-size: 75%;
 	white-space: nowrap;
-		border-bottom-right-radius: 3rem;
-	border-bottom-left-radius: 3rem;
 	/* hide scrollbar but allow scrolling */
 	-ms-overflow-style: none; /* for Internet Explorer, Edge */
     scrollbar-width: none; /* for Firefox */
@@ -1080,18 +1072,15 @@ display: none;
 /* @group Search + Filters */
 
 #search {
-	padding-top: 1rem;
-	padding-bottom: 1rem;
+	padding-top: .5rem;
+	padding-bottom: .5rem;
 	padding-left: var(--normal-margin);
-		padding-right: var(--normal-margin);
-	margin-bottom: .5rem;
+	padding-right: var(--normal-margin);
 	display: none;
 	flex-direction: row;
 	gap: 0rem;
 	align-items: center;
 	justify-content: space-between;
-	border-radius: 3rem;
-	background-color: var(--background-color);
 }
 
 /* N'afficher la recherche que sur la liste */
@@ -1333,10 +1322,6 @@ a:hover .svg-fill {
 	gap: 1.5rem;
 	justify-content: center;
 	align-items: center;
-	padding-left: 2rem;
-	margin-bottom: .5rem;
-	border-radius: 3rem;
-	background-color: var(--background-color);
 }
 
 
@@ -1361,13 +1346,10 @@ a:hover .svg-fill {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	gap: .5rem;
-	padding-left: 1rem;
-	padding-right: 1rem;
-	padding-bottom: var(--normal-margin);
-	padding-top: var(--normal-margin);
-	border-radius: 3rem;
-	background-color: var(--background-color);
-	margin-bottom: .5rem;
+	padding-left: var(--normal-margin);
+	padding-right: var(--normal-margin);
+	padding-bottom: .5rem;
+	padding-top: .5rem;
 }
 
 .options ul {
@@ -1435,11 +1417,7 @@ a:hover .svg-fill {
 /* @group linklist */
 
 #linklist {
-	border-radius: 3rem;
-	background-color: var(--background-color);
-	margin-bottom: .5rem;
 	flex-grow : 1;
-	padding-top: .5rem;
 	padding-bottom: .5rem;
 	
 }
@@ -1619,10 +1597,6 @@ padding-bottom: 1rem;
 	background: none;
 	justify-content: center;
 	align-items: center;
-}
-
-.link-expand svg {
-	
 }
 
 /* Animating + to X */
@@ -1817,9 +1791,6 @@ padding-bottom: 1.2rem;
 /* @group tools */
 
 .tools-template #content {
-	background-color: var(--background-color);
-	border-radius: 3rem;
-	margin-bottom: .5rem;
 	padding-bottom: var(--normal-margin);
 }
 
@@ -1956,9 +1927,6 @@ padding-bottom: 1.2rem;
 	/* Astuce pour placer le footer en pied de page *!/
 	padding-top:var(--normal-margin) ;
 	padding-bottom: var(--normal-margin);*/
-	background-color: var(--background-color);
-	border-top-left-radius: 3rem;
-	border-top-right-radius: 3rem;
 }
 
 .footer-ours {
@@ -2355,13 +2323,10 @@ hr {
 	grid-template-columns: 1fr auto;
 	gap: 1rem;
 	flex-direction: row;
-	padding-top: 1rem;
+	padding-top: .5rem;
 	padding-left: var(--normal-margin);
 	padding-right: var(--normal-margin);
-	padding-bottom: 1rem;
-	border-radius: 3rem;
-	background-color: var(--background-color);
-	margin-bottom: .5rem;
+	padding-bottom: .5rem;
 }
 
 .toolbar-plugin input {
@@ -2432,7 +2397,6 @@ hr {
 	#nav-links ul {
 		flex-direction: row;
 		font-size: 75%;
-		border-radius: 0rem;
 		padding-left: 0;
 	}
 	
@@ -2539,11 +2503,7 @@ font-size: 100%;
 	.tools-bookmarklets {
 		display: block;
 	}
-	/* Masquer les bulles sur grand écran */
-	#search, #the-header,.toolbar-plugin,#linklist,.navigation,.linklist-paging .options,#footer,.tools-template #content,.container,.sub-nav {
-	margin-bottom: 1px;
-	border-radius: 0;
-}
+
 /* Retirer le padding ajouté sur la version smartphone */
 #linklist {
 		padding-top: 0;
