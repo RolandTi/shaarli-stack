@@ -23,7 +23,7 @@
 	--color-alerte: #FF353B;
 	--bg-alerte: rgba(255, 52, 58, 0.10);
 	--small-font :1.2rem;
-	--small-medium-font :1.2rem;
+	--small-medium-font :1.5rem;
 	--border-radius:1rem;
 }
 
@@ -1132,7 +1132,6 @@ display: none;
 	margin: 0;
 	display: inline-flex;
 	font-size: var(--small-medium-font);
-
 }
 
 form input[type="text"]:hover, textarea:hover, input[type="url"]:hover {
@@ -1642,6 +1641,8 @@ padding-bottom: 1rem;
 }
 
 
+
+
 /* Expand post if link contain anchor or single */
 
 :target .link-content, .full-post .link-content, .s_large_post .link-content {
@@ -1678,11 +1679,12 @@ padding-bottom: 1rem;
 }
 
 .nav_item_actions .item_action {
-	font-size: 1.2rem;
+	font-size: var(--small-font);
 	color: var(--dark-main-color);
 	text-align: center;
 	transition: opacity 200ms ease-in-out 0s;
 	opacity: .5;
+	text-decoration: none;
 }
 
 .nav_item_actions .item_action:hover {
@@ -1712,7 +1714,6 @@ padding-bottom: 1rem;
 	justify-content: center;
 	gap: 1rem;
 	align-items: center;
-	padding-bottom: 2.4rem;
 	opacity: .5;
 }
 
@@ -1750,6 +1751,19 @@ padding-bottom: 1rem;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+}
+
+.linklist-item-infos {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	 flex-wrap:wrap;
+	 margin-bottom: var(--normal-margin);
+}
+
+.link_plugin {
+	display: flex;
+	gap:1ch;
 }
 
  /* Start of Small / Medium / Large */
@@ -1799,13 +1813,17 @@ padding-bottom: 1.2rem;
 	
 }
 
+
+
 @media (min-width:768px) {
 	.linklist-item.s_large_post {
 		padding-left: 3rem;
 		padding-top: 1.8rem;
-		padding-bottom: 1.8rem;
-/*		padding-right: 3rem;*/
 	}
+	
+	.linklist-item.s_large_post:hover  {
+		padding-left: 3rem;
+}
 	
 	.s_large_post .linklist-link {
 		font-weight: bold;
@@ -2494,12 +2512,14 @@ hr {
 
 	.linklist-item {
 		font-size: 125%;
+transition:padding 100ms ease-in-out 0s;
+
 	}
 	
 	.linklist-item:hover {
 /*		outline: 2px solid var(--dark-main-color);*/
-background-color:rgba(0, 0, 0, 0.05);
-transition: background 300ms ease-in-out 0s;
+transition: padding 100ms ease-in-out 0s;
+padding-left: 3rem;
 	}
 	
 	.link_footer {

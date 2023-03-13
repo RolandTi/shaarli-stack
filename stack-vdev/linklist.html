@@ -152,7 +152,7 @@
 					<a href="{$base_path}/admin/shaare/{$value.id}/pin?token={$token}"
 					 title="{$strToggleSticky}" class="in-link {if="$value.sticky"}pinned-link{/if} item_action">{$strSticky}</a>
                 {/if}
-					<a href="{$base_path}/shaare/{$value.shorturl}" class="item_action">{$strPermalinkLc}</a>
+					<a href="{$base_path}/shaare/{$value.shorturl}" class="item_action">{$strPermalink}</a>
 					
 				{if="$is_logged_in && $value.private"}
 					<a href="{$base_path}/admin/shaare/private/{$value.shorturl}?token={$token}" title="{$strShaarePrivate}" class="item_action">
@@ -172,7 +172,6 @@
 				    {$link_plugin_counter=count($value.link_plugin)}
 				    {loop="$value.link_plugin"}
 				      {$value}
-				      {if="$link_plugin_counter - 1 != $counter"}&middot;{/if}
 				    {/loop}
 				  {/if}
 				</div><!--link_plugin:end-->
