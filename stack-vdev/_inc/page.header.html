@@ -40,7 +40,7 @@
 	
 	<nav id="nav-links">
 		<ul>
-			<li><a href="{$titleLink}"><span class="shaarli_title">{$shaarlititle}</span></a></li>
+			<li><!--<a href="{$titleLink}">--><span class="shaarli_title">{$shaarlititle}</span><!--</a>--></li>
 			{if="$is_logged_in || $openshaarli"}
 			<!-- ADD SHAARE -->
 			<li><a href="{$base_path}/admin/add-shaare" id="shaarli-menu-shaare">{'Shaare'|t}</a>
@@ -103,6 +103,9 @@
 <main id="content" class="container">
 <!-- SEARCH:START -->			
 	<div id="search" class="searchform-block header-search">
+		<button class="button_filters" aria-expanded="false">
+			<svg width="21px" height="21px" viewBox="0 0 21 21"><rect width="21" height="21" class="svg-fill-empty" /><path class="svg-line-thin" d="M0.9,0.5c-0.2,0-0.3,0.1-0.4,0.2c-0.1,0.1-0.1,0.3,0,0.4l7,9.6V16c0,0.1,0.1,0.3,0.2,0.3l3.9,3.1c0.1,0.1,0.3,0.1,0.5,0.1c0.1-0.1,0.2-0.2,0.2-0.4v-8.3l7-9.6c0.1-0.1,0.1-0.3,0-0.4c-0.1-0.1-0.2-0.2-0.4-0.2L0.9,0.5z"/></svg>
+		</button>
 		<form method="GET" class="pure-form searchform" name="searchform" action="{$base_path}/">
 			<input type="text" id="searchform_value" name="searchterm" aria-label="{'Search text'|t}" placeholder="{'Search text'|t}"
 		             {if="!empty($search_term)"}
@@ -119,15 +122,6 @@
 		      >
 			<button type="submit" class="search-button" aria-label="{'Search'|t}"><svg aria-hidden="true" viewbox="0 0 21 21" width="21" height="21"><rect class="svg-fill-empty" width="21" height="21" /><circle class="svg-line" cx="8.88" cy="8.79" r="6.5" /><line class="svg-line" x1="13.46" y1="13.4" x2="18.73" y2="18.68" /></svg></button>
 		</form>
-		<button class="button_filters" aria-expanded="false">
-			<svg width="21px" height="21px" viewBox="0 0 21 21">
-<rect width="21" height="21" class="svg-fill-empty" />
-<path class="svg-line-thin" d="M0.9,0.5c-0.2,0-0.3,0.1-0.4,0.2c-0.1,0.1-0.1,0.3,0,0.4l7,9.6V16c0,0.1,0.1,0.3,0.2,0.3l3.9,3.1
-	c0.1,0.1,0.3,0.1,0.5,0.1c0.1-0.1,0.2-0.2,0.2-0.4v-8.3l7-9.6c0.1-0.1,0.1-0.3,0-0.4c-0.1-0.1-0.2-0.2-0.4-0.2L0.9,0.5z"/>
-<line class="svg-line-thin" x1="2.6" y1="3.9" x2="17.4" y2="3.9"/>	
-</svg>
-
-		</button>
 	</div>
 <!-- SEARCH:END -->
 <!-- FILTERS:START -->
