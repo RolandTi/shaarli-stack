@@ -94,8 +94,8 @@
                 <div class="thumbnail">
                   {ignore}RainTPL hack: put the 2 src on two different line to avoid path replace bug{/ignore}
                   <a href="{$value.real_url}" aria-hidden="true" tabindex="-1">
-                  <img data-src="{$root_path}/{$value.thumbnail}#" class="b-lazy"
-                    src="" />
+                  <img data-src="{$root_path}/{$value.thumbnail}#"
+                    src="{$root_path}/{$value.thumbnail}#" />
                   </a>
                 </div>
               </div>
@@ -194,8 +194,7 @@
 	</div>
 	
 	{include="_inc/page.footer"}
-<script src="{$asset_path}/js/thumbnails.min.js?v={$version_hash}#"></script>
-{if="$is_logged_in && $async_metadata"}<script src="{$asset_path}/js/metadata.min.js?v={$version_hash}#"></script>{/if}
+	{if="$is_logged_in && $async_metadata"}<script src="{$asset_path}/js/metadata.min.js?v={$version_hash}#"></script>{/if}
 
 <script>
 // Show / Hide link details
