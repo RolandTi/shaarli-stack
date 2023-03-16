@@ -188,9 +188,7 @@
 	    {/loop}
 	</div>
 	
-	<div>
-		{include="_inc/linklist.paging"}
-	</div>
+	{include="_inc/linklist.paging"}
 	
 	{include="_inc/page.footer"}
 	{if="$is_logged_in && $async_metadata"}<script src="{$asset_path}/js/metadata.min.js?v={$version_hash}#"></script>{/if}

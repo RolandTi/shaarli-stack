@@ -1,5 +1,5 @@
 {if="count($links)>1"}
-<div class="linklist-paging">{if="!empty($action_plugin)"}
+<div id="linklist-paging">{if="!empty($action_plugin)"}
       {loop="$action_plugin"}
         {$value.attr.class=isset($value.attr.class) ? $value.attr.class : ''}
         {$value.attr.class=!empty($value.on) ? $value.attr.class .' filter-on' : $value.attr.class .' filter-off'}
@@ -21,6 +21,9 @@
 			</svg>
 		</a>
 	    {/if}
+		{if="$page_max>1"}
+		<span class="pagination">{$page_current} / {$page_max}</span>
+		{/if}
 	    {if="$next_page_url"}
 	    <a href="{$next_page_url}" class="icon_button">
 			<svg viewBox="0 0 26 26" width="26" height="26">
@@ -30,9 +33,8 @@
 			</svg>
 		</a>
 	    {/if}
-		         {if="$page_max>1"}<span class="pagination">{$page_current} / {$page_max}</span>{/if}</div>
+	</div> <!--Fin #navigation-->
 	
-	<div class="options">
 		<div class="linksperpage">
 			<span class="options-title">{'Links per page'|t}</span>
 			<ul>
@@ -50,17 +52,6 @@
 					</form>
 				</li>
 			</ul>
-		</div>
-		<div class="filtering">
-			<span class="options-title">{'Filters'|t}</span>
-			<ul>
-			{if="$is_logged_in"}
-			<li><a href="{$base_path}/admin/visibility/private" class="{if="$visibility==='private'"}filter-on{else}filter-off{/if}">{'Only display private links'|t}</a></li>
-			<li><a href="{$base_path}/admin/visibility/public" class="{if="$visibility==='public'"}filter-on{else}filter-off{/if}">{'Only display public links'|t}</a></li>
-			{/if}
-			<li><a href="{$base_path}/untagged-only" class={if="$untaggedonly"}"filter-on"{else}"filter-off"{/if}>{'Filter untagged links'|t}</a></li>
-			</ul>
-		</div>
-	</div>
+		</div> <!--Fin .linksperpage-->
 </div>
  {/if}

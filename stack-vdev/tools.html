@@ -8,76 +8,14 @@
 		
 		<ul>
 			<li><a href="{$base_path}/admin/configure">{'Configure your Shaarli'|t}</a>
-				<svg width="36" height="36" viewBox="0 0 26 26">
-						<rect class="svg-fill-empty" width="26" height="26" />
-						<line class="svg-line-thin" x1="14.34" y1="13" x2="5.46" y2="13" />
-						<line class="svg-line-thin" x1="20.54" y1="13" x2="17.02" y2="13" />
-						<circle class="svg-line-thin" cx="15.68" cy="13" r="1.34" />
-						<line class="svg-line-thin" x1="7" y1="8.55" x2="5.46" y2="8.55" />
-						<line class="svg-line-thin" x1="20.54" y1="8.55" x2="9.68" y2="8.55" />
-						<circle class="svg-line-thin" cx="8.34" cy="8.55" r="1.34" />
-						<line class="svg-line-thin" x1="11.66" y1="17.45" x2="5.46" y2="17.45" />
-						<line class="svg-line-thin" x1="20.54" y1="17.45" x2="14.34" y2="17.45" />
-						<circle class="svg-line-thin" cx="13" cy="17.45" r="1.34" />
-				</svg>
 			</li>
-			<li><a href="{$base_path}/admin/plugins">{'Plugin administration'|t}</a>
-				<svg width="36" height="36" viewBox="0 0 26 26">
-						<rect class="svg-fill-empty" width="26" height="26" />
-						<rect class="svg-line-thin" x="4.6" y="4.6" width="6.77" height="6.77" rx="1.99" ry="1.99" />
-						<rect class="svg-line-thin" x="14.63" y="4.6" width="6.77" height="6.77" rx="1.99" ry="1.99" />
-						<rect class="svg-line-thin" x="4.6" y="14.63" width="6.77" height="6.77" rx="1.99" ry="1.99" />
-						<rect class="svg-line-thin" x="14.63" y="14.63" width="6.77" height="6.77" rx="1.99" ry="1.99" />
-				</svg>
-			</li>
-			<li><a href="{$base_path}/admin/server">{'Server administration'|t}</a>
-				<svg width="36" height="36" viewBox="0 0 26 26">
-					<rect class="svg-fill-empty" width="26" height="26" />
-					<rect class="svg-line-thin" x="3.25" y="4.42" width="19.5" height="4.7" rx="1.82" ry="1.82" />
-					<line class="svg-line-thin" x1="5.48" y1="6.77" x2="9.14" y2="6.77" />
-					<rect class="svg-line-thin" x="3.25" y="10.65" width="19.5" height="4.7" rx="1.82" ry="1.82" />
-					<line class="svg-line-thin" x1="5.48" y1="13" x2="9.14" y2="13" />
-					<rect class="svg-line-thin" x="3.25" y="16.88" width="19.5" height="4.7" rx="1.82" ry="1.82" />
-					<line class="svg-line-thin" x1="5.48" y1="19.23" x2="9.14" y2="19.23" />
-				</svg>		
-			</li>
+			<li><a href="{$base_path}/admin/plugins">{'Plugin administration'|t}</a></li>
+			<li><a href="{$base_path}/admin/server">{'Server administration'|t}</a></li>
 			{if="!$openshaarli"}
-			<li><a href="{$base_path}/admin/password">{'Change password'|t}</a>
-					<svg width="36" height="36" viewBox="0 0 26 26">
-						<rect class="svg-fill-empty" width="26" height="26" />
-						<rect class="svg-line-thin" x="5.65" y="11.56" width="14.71" height="10.85" rx="2.09" ry="2.09" />
-						<path class="svg-line-thin" d="M10.83,2.94h4.34c1.03,0,1.87,.84,1.87,1.87v6.75H8.96V4.81c0-1.03,.84-1.87,1.87-1.87Z" />
-						<line class="svg-line-thin" x1="13" y1="17.19" x2="13" y2="18.9" />
-						<circle class="svg-line-thin" cx="13" cy="16.1" r=".89" />
-				</svg>
-			</li>{/if}
-			<li><a href="{$base_path}/admin/tags">{'Manage tags'|t}</a>
-<svg width="36" height="36" viewBox="0 0 26 26">
-<g id="c">
-		<rect class="svg-fill-empty" width="26" height="26" />
-		
-		<g>
-			<path class="svg-line-thin" d="M22.34,6.46l-2.79-2.79h-5.93L3.89,13.39c-.3,.3-.3,.8,0,1.1l7.62,7.62c.3,.3,.8,.3,1.1,0l9.72-9.72V6.46Z" />
-			<circle class="svg-line-thin" cx="17.58" cy="8.42" r="1.34" />
-		</g>
-	</g>
-</svg>		
-			</li>
-			<li><a href="{$base_path}/admin/import">{'Import links'|t}</a>
-					<svg width="36" height="36" viewBox="0 0 26 26">
-		<rect class="svg-fill-empty" width="26" height="26" />
-		<g>
-			<line class="svg-line-thin" x1="13" y1="6.67" x2="13" y2="19.33" />
-			<path class="svg-line-thin" d="M7.47 12.2 13 6.67 18.53 12.2" />
-		</g><line class="svg-line-thin" x1="20.54" y1="6.67" x2="5.46" y2="6.67" />
-</svg>			</li>
-			<li><a href="{$base_path}/admin/export">{'Export database'|t}</a>
-				<svg width="36" height="36" viewBox="0 0 26 26">
-					<rect class="svg-fill-empty" width="26" height="26" />
-					<line class="svg-line-thin" x1="13" y1="19.33" x2="13" y2="6.67" />
-					<polyline class="svg-line-thin" points="18.53 13.8 13 19.33 7.47 13.8" />
-					<line class="svg-line-thin" x1="5.46" y1="19.33" x2="20.54" y2="19.33" />
-				</svg>
+			<li><a href="{$base_path}/admin/password">{'Change password'|t}</a></li>{/if}
+			<li><a href="{$base_path}/admin/tags">{'Manage tags'|t}</a></li>
+			<li><a href="{$base_path}/admin/import">{'Import links'|t}</a></li>
+			<li><a href="{$base_path}/admin/export">{'Export database'|t}</a></svg>
 			</li>
 			{loop="$tools_plugin"}
 			<li>{$value}</li>
@@ -88,11 +26,10 @@
 	<section class="tools-section tools-bookmarklets">
 		<h2>{'Bookmarklets'|t}</h2>
 		
-		<p class="infos-font">{'Drag one of these button to your bookmarks toolbar or right-click it and "Bookmark This Link"'|t},
-		      {'then click on the bookmarklet in any page you want to share.'|t}</p>
+		<p class="infos-font">{'Drag one of these button to your bookmarks toolbar or right-click it and "Bookmark This Link"'|t}, {'then click on the bookmarklet in any page you want to share.'|t}</p>
 		
 		<ul>
-			<li><a class="bookmarklet-link"
+			<li><a class="bookmarklet-link button"
 		         href="javascript:(
 		          function(){
 		            var%20url%20=%20location.href;
@@ -110,7 +47,7 @@
 		            );
 		          }
 		        )();">{'Shaare link'|t}</a></li>
-			<li><a class="bookmarklet-link"
+			<li><a class="bookmarklet-link button"
 		         href="javascript:(
 		          function(){
 		            var%20desc=document.getSelection().toString();
@@ -129,54 +66,18 @@
 		</ul>
 	</section>
 		
-			<section class="tools-section tools-3rd">
+	<section class="tools-section tools-3rd">
 
-			<h2>{'Third-party resources'|t}</h2>
+		<h2>{'Third-party resources'|t}</h2>
 			<ul>
-				<li><a href="//addons.mozilla.org/fr/firefox/addon/shaarli/">{'Firefox plugin'|t}</a>
-				<svg width="36" height="36" viewBox="0 0 26 26">
-	<rect class="svg-fill-empty" width="26" height="26" />
-	<path class="svg-line-thin" d="M22.83,8.6c-.46-1.11-1.4-2.31-2.13-2.69,.52,1.01,.88,2.1,1.07,3.22v.02c-1.2-2.99-3.23-4.2-4.89-6.82-.08-.13-.17-.27-.25-.41-.05-.08-.08-.15-.12-.22-.07-.13-.12-.27-.16-.42,0-.01-.01-.03-.02-.03,0,0-.01,0-.02,0h0c-2.67,1.56-3.57,4.45-3.65,5.89-1.06,.07-2.08,.47-2.92,1.13-.09-.07-.18-.14-.27-.21-.24-.85-.25-1.74-.03-2.59-.98,.47-1.85,1.15-2.55,1.97h0c-.42-.53-.39-2.29-.37-2.66-.12,.05-.24,.11-.35,.19-.37,.26-.72,.56-1.04,.89-.36,.37-.7,.77-.99,1.19h0c-.68,.97-1.17,2.06-1.42,3.21v.07c-.03,.09-.11,.56-.12,.66v.02c-.1,.48-.15,.97-.17,1.46v.05c.01,5.86,4.77,10.6,10.63,10.59,5.15,0,9.56-3.72,10.44-8.8,.02-.14,.03-.27,.05-.41,.22-1.81-.02-3.64-.69-5.33h0Zm-12.23,8.31s.1,.05,.15,.07h0c-.05-.02-.1-.05-.15-.07Zm11.18-7.75h0Z" />
-	<path class="svg-line-thin" d="M13.03,10.5c-.02,.26-.95,1.17-1.28,1.17-3.02,0-3.51,1.83-3.51,1.83,.13,1.54,1.2,2.8,2.5,3.47,.06,.03,.12,.06,.18,.09,.1,.05,.21,.09,.31,.13,.44,.16,.91,.25,1.38,.27,5.29,.25,6.31-6.32,2.5-8.23,.9-.12,1.81,.1,2.56,.62-.95-1.67-2.72-2.71-4.65-2.71-.13,0-.25,.01-.37,.02-1.06,.07-2.08,.47-2.92,1.13,.16,.14,.34,.32,.73,.7,.72,.71,2.57,1.44,2.57,1.53h0Z" />
-	<path class="svg-line-thin" d="M8.25,13.5s.49-1.83,3.51-1.83c.33,0,1.26-.91,1.28-1.17-1.3,.47-2.73,.41-3.98-.16-1.24-.63-2.72-.57-3.9,.16,.45,.98,1.44,1.6,2.51,1.58-.2,1.73,.72,3.76,2.94,4.82,.05,.02,.1,.05,.15,.07-1.3-.67-2.37-1.94-2.5-3.47h0Z" />
-</svg></li>
-				<li><a href="//chrome.google.com/webstore/detail/shiny-shaarli/hajdfkmbdmadjmmpkkbbcnllepomekin">Chrome {'plugin'|t}</a>
-				<svg width="36" height="36" viewBox="0 0 26 26">
-	<rect class="svg-fill-empty" width="26" height="26" />
-	<circle class="svg-line-thin" cx="13" cy="13" r="9.5" />
-	<circle class="svg-line-thin" cx="13" cy="13" r="3.29" />
-	<line class="svg-line-thin" x1="9.71" y1="13" x2="9.71" y2="4.2" />
-	<line class="svg-line-thin" x1="15.29" y1="15.33" x2="9.07" y2="21.55" />
-	<line class="svg-line-thin" x1="15.27" y1="10.65" x2="21.64" y2="16.72" />
-</svg></li>
-				<li><a href="//play.google.com/store/apps/details?id=com.dimtion.shaarlier&hl=fr">Android Shaarlier</a>
-				<svg width="36" height="36" viewBox="0 0 26 26">
-			<rect class="svg-fill-empty" width="26" height="26" />
-			<path class="svg-line-thin" d="M22.5,15.71c0-5.25-4.25-9.5-9.5-9.5S3.5,10.46,3.5,15.71H22.5Z" />
-			<circle class="svg-line-thin" cx="9.45" cy="12.32" r="1" />
-			<circle class="svg-line-thin" cx="16.55" cy="12.32" r="1" />
-			<polyline class="svg-line-thin" points="3.5 22.5 3.5 18.44 22.5 18.44 22.5 22.5" />
-			<line class="svg-line-thin" x1="6.1" y1="9.18" x2="4.42" y2="6.21" />
-			<line class="svg-line-thin" x1="19.9" y1="9.18" x2="21.58" y2="6.21" />
-</svg></li>
+				<li><a href="//addons.mozilla.org/fr/firefox/addon/shaarli/">{'Firefox plugin'|t}</a></li>
+				<li><a href="//chrome.google.com/webstore/detail/shiny-shaarli/hajdfkmbdmadjmmpkkbbcnllepomekin">Chrome {'plugin'|t}</a></li>
+				<li><a href="//play.google.com/store/apps/details?id=com.dimtion.shaarlier&hl=fr">Android Shaarlier</a></li>
 				<li><a href="//stakali.toneiv.eu/">Android Stakali
-		      </a>
-				<svg width="36" height="36" viewBox="0 0 26 26">
-			<rect class="svg-fill-empty" width="26" height="26" />
-			<path class="svg-line-thin" d="M22.5,15.71c0-5.25-4.25-9.5-9.5-9.5S3.5,10.46,3.5,15.71H22.5Z" />
-			<circle class="svg-line-thin" cx="9.45" cy="12.32" r="1" />
-			<circle class="svg-line-thin" cx="16.55" cy="12.32" r="1" />
-			<polyline class="svg-line-thin" points="3.5 22.5 3.5 18.44 22.5 18.44 22.5 22.5" />
-			<line class="svg-line-thin" x1="6.1" y1="9.18" x2="4.42" y2="6.21" />
-			<line class="svg-line-thin" x1="19.9" y1="9.18" x2="21.58" y2="6.21" />
-</svg></li>
-			  <li><a href="//itunes.apple.com/app/ShaarliOS/id1027441388?mt=8">iOS</a>
-				<svg width="36" height="36" viewBox="0 0 26 26">
-	<rect class="svg-fill-empty" width="26" height="26" />
-			<path class="svg-line-thin" d="M20.72,9.4c-.12,.09-2.19,1.26-2.19,3.86,0,3.01,2.64,4.07,2.72,4.1-.01,.07-.42,1.46-1.39,2.88-.87,1.25-1.77,2.49-3.15,2.49s-1.73-.8-3.32-.8-2.1,.83-3.36,.83-2.14-1.16-3.15-2.57c-1.17-1.67-2.11-4.25-2.11-6.71,0-3.94,2.56-6.03,5.08-6.03,1.34,0,2.46,.88,3.3,.88s2.05-.93,3.57-.93c.58,0,2.65,.05,4.02,2.01Zm-5.15-4.1c.55-.65,.93-1.55,.93-2.45,0-.13-.01-.25-.03-.35-.89,.03-1.95,.59-2.59,1.33-.5,.57-.97,1.47-.97,2.38,0,.14,.02,.27,.03,.32,.06,.01,.15,.02,.24,.02,.8,0,1.8-.54,2.38-1.25Z" />
-</svg></li>
+		      </a></li>
+			  <li><a href="//itunes.apple.com/app/ShaarliOS/id1027441388?mt=8">iOS</a></li>
 			</ul>
-		</section>
+	</section>
 	
 	{include="_inc/page.footer"}
 	
