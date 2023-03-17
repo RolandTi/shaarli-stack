@@ -45,3 +45,12 @@
 <input type="hidden" name="token" value="{$token}" id="token" />
 <input type="hidden" name="tags_separator" value="{$tags_separator}" id="tags_separator" />
 <script src="{$asset_path}/js/shaarli.min.js?v={$version_hash}#"></script>
+<script>
+(function () {
+    // Match meta theme-color with variable background
+	const headerElement = document.body;
+	const headerColor = window.getComputedStyle(headerElement, null);
+	let bgColor = headerColor.getPropertyValue("background-color");
+	document.querySelector('meta[name="theme-color"]').setAttribute('content', bgColor);
+})();
+</script>
