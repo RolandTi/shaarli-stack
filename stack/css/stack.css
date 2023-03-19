@@ -501,21 +501,20 @@ details summary {
 	color: #00CD51;
 	margin-top: var(--normal-margin);
 	margin-bottom: var(--normal-margin);
+	display: flex;
+	align-items: center;
+	gap:1rem;
+	
 }
 
 #shaarli-errors-alert {
-	margin-top: var(--normal-margin);
-	margin-bottom: var(--normal-margin);
 	display: flex;
 	align-items: center;
 	align-content: center;
-	justify-content: space-between;
-	gap: 2rem;
-	font-size: 85%;
+	gap:1rem;
 }
 
 .pure-alert-close {
-	padding: .5rem;
 	cursor: pointer;
 }
 
@@ -1733,9 +1732,6 @@ a:hover .svg-fill {
 	padding-right: .5rem;
 }
 
-.link-back:hover .svg-line-thin {
-	stroke: var(--main-color);
-}
 
 /* @end */
 
