@@ -120,7 +120,7 @@
 			<button type="submit" class="search-button" aria-label="{'Search'|t}"><svg aria-hidden="true" viewbox="0 0 21 21" width="21" height="21"><rect class="svg-fill-empty" width="21" height="21" /><circle class="svg-line" cx="8.88" cy="8.79" r="6.5" /><line class="svg-line" x1="13.46" y1="13.4" x2="18.73" y2="18.68" /></svg></button>
 		</form>
 		<button class="button_filters" aria-expanded="false">
-		<svg width="21px" height="21px" viewBox="0 0 21 21"><rect width="21" height="21" class="svg-fill-empty" /><path class="svg-line-thin" d="M0.9,0.5c-0.2,0-0.3,0.1-0.4,0.2c-0.1,0.1-0.1,0.3,0,0.4l7,9.6V16c0,0.1,0.1,0.3,0.2,0.3l3.9,3.1c0.1,0.1,0.3,0.1,0.5,0.1c0.1-0.1,0.2-0.2,0.2-0.4v-8.3l7-9.6c0.1-0.1,0.1-0.3,0-0.4c-0.1-0.1-0.2-0.2-0.4-0.2L0.9,0.5z"/></svg>
+		<svg width="21px" height="21px" viewBox="0 0 21 21"><rect width="21" height="21" class="svg-fill-empty" /><path class="svg-fill" d="M0.9,0.5c-0.2,0-0.3,0.1-0.4,0.2c-0.1,0.1-0.1,0.3,0,0.4l7,9.6V16c0,0.1,0.1,0.3,0.2,0.3l3.9,3.1c0.1,0.1,0.3,0.1,0.5,0.1c0.1-0.1,0.2-0.2,0.2-0.4v-8.3l7-9.6c0.1-0.1,0.1-0.3,0-0.4c-0.1-0.1-0.2-0.2-0.4-0.2L0.9,0.5z"/></svg>
 		</button>
 	</div>
 <!-- SEARCH:END -->
@@ -151,7 +151,7 @@
     {if="$versionError"}
 		{'Error'|t}: {$versionError}
     {/if}
-	<span id="new-version-dismiss" class="pure-alert-close"><svg aria-hidden="true" width="21" height="21" viewbox="0 0 21 21"><circle class="svg-close" cx="10.5" cy="10.5" r="10"/><line class="svg-close" x1="6.5" y1="6.5" x2="14.5" y2="14.5"/><line class="svg-close" x1="14.5" y1="6.5" x2="6.5" y2="14.5"/></svg>
+	<span id="new-version-dismiss" class="pure-alert-close"><svg aria-hidden="true" viewbox="0 0 25 25"><line class="svg-close" x1="19.5" y1="5.5" x2="5.5" y2="19.5"/><line class="svg-close" x1="5.5" y1="5.5" x2="19.5" y2="19.5"/></svg>
 </span>
 </div>
 {/if}
@@ -160,8 +160,7 @@
 <!-- ALERTE:PLUGINS -->			
 <div class="pure-g new-version-message pure-alert pure-alert-error pure-alert-closable" id="shaarli-errors-alert">
 	<div>{loop="plugin_errors"}<p>{$value}</p>{/loop}</div>	
-	<span class="pure-alert-close"><svg aria-hidden="true" width="21" height="21" viewbox="0 0 21 21"><circle class="svg-close" cx="10.5" cy="10.5" r="10"/><line class="svg-close" x1="6.5" y1="6.5" x2="14.5" y2="14.5"/><line class="svg-close" x1="14.5" y1="6.5" x2="6.5" y2="14.5"/></svg>
-</span>
+	<span class="pure-alert-close"><svg aria-hidden="true" viewbox="0 0 25 25"><line class="svg-close" x1="19.5" y1="5.5" x2="5.5" y2="19.5"/><line class="svg-close" x1="5.5" y1="5.5" x2="19.5" y2="19.5"/></svg></span>
 </div>
 {/if}
 	
@@ -169,8 +168,7 @@
 <!-- ALERTE:GLOBAL -->			
 <div class="pure-g header-alert-message pure-alert pure-alert-error pure-alert-closable" id="shaarli-errors-alert">
 	{loop="$global_errors"}<p>{$value}</p>{/loop}
-	<span class="pure-alert-close"><svg aria-hidden="true" width="21" height="21" viewbox="0 0 21 21"><circle class="svg-close" cx="10.5" cy="10.5" r="10"/><line class="svg-close" x1="6.5" y1="6.5" x2="14.5" y2="14.5"/><line class="svg-close" x1="14.5" y1="6.5" x2="6.5" y2="14.5"/></svg>
-</span>
+	<span class="pure-alert-close"><svg aria-hidden="true" viewbox="0 0 25 25"><line class="svg-close" x1="19.5" y1="5.5" x2="5.5" y2="19.5"/><line class="svg-close" x1="5.5" y1="5.5" x2="19.5" y2="19.5"/></svg></span>
 </div>
 {/if}
 	
@@ -178,8 +176,7 @@
 <!-- ALERTE:WARNING -->	
 <div class="pure-g header-alert-message pure-alert pure-alert-warning pure-alert-closable" id="shaarli-warnings-alert">
 	<div>{loop="global_warnings"}<p>{$value}</p>{/loop}</div>
-	<span class="pure-alert-close"><svg aria-hidden="true" width="21" height="21" viewbox="0 0 21 21"><circle class="svg-close" cx="10.5" cy="10.5" r="10"/><line class="svg-close" x1="6.5" y1="6.5" x2="14.5" y2="14.5"/><line class="svg-close" x1="14.5" y1="6.5" x2="6.5" y2="14.5"/></svg>
-</span>
+	<span class="pure-alert-close"><svg aria-hidden="true" viewbox="0 0 25 25"><line class="svg-close" x1="19.5" y1="5.5" x2="5.5" y2="19.5"/><line class="svg-close" x1="5.5" y1="5.5" x2="19.5" y2="19.5"/></svg></span>
 </div>
 {/if}
 
@@ -187,7 +184,6 @@
 <!-- ALERTE:SUCCESSES ALERT -->	
 <div class="pure-g header-alert-message new-version-message pure-alert pure-alert-success pure-alert-closable" id="shaarli-success-alert">
 	      {loop="$global_successes"}<p>{$value}</p>{/loop}
-	<span class="pure-alert-close"><svg aria-hidden="true" width="21" height="21" viewbox="0 0 21 21"><circle class="svg-close" cx="10.5" cy="10.5" r="10"/><line class="svg-close" x1="6.5" y1="6.5" x2="14.5" y2="14.5"/><line class="svg-close" x1="14.5" y1="6.5" x2="6.5" y2="14.5"/></svg>
-</span>
+	<span class="pure-alert-close"><svg aria-hidden="true" viewbox="0 0 25 25"><line class="svg-close" x1="19.5" y1="5.5" x2="5.5" y2="19.5"/><line class="svg-close" x1="5.5" y1="5.5" x2="19.5" y2="19.5"/></svg></span>
 </div>
 {/if}

@@ -20,6 +20,7 @@
 	--color06: #6C6C70;
 	--color-alerte: #FF353B;
 	--small-font: 1.2rem;
+	--medium-font: 1.2rem;
 	--small-medium-font: 1.5rem;
 	--border-radius: 1rem;
 }
@@ -32,6 +33,7 @@
 	:root {
 		--small-font: 1.2rem;
 		--small-medium-font: unset;
+		--medium-font: 1.5rem;
 	}
 }
 
@@ -491,31 +493,63 @@ details summary {
 }
 
 .alerte-rouge, .pure-alert-error {
-	color: red;
-	background-color: rgba(255, 0, 0, 0.1);
-	padding: 1ch;
-	border-radius: .5rem;
+	color: white;
+	background-color: var(--color-alerte);
+	padding-left: 1ch;
+	padding-right: 1ch;
+	border-radius: var(--border-radius);
 }
 
 .pure-alert-success, .pure-alert-warning {
-	color: #00CD51;
+	color: white;
+	background-color: rgb(0, 205, 81);
 	margin-top: var(--normal-margin);
 	margin-bottom: var(--normal-margin);
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	gap:1rem;
+	padding-left: 1ch;
+	padding-right: 1ch;
+	border-radius: var(--border-radius);
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 	
 }
 
 #shaarli-errors-alert {
+	margin-top: var(--normal-margin);
+	margin-bottom: var(--normal-margin);
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
 	align-content: center;
 	gap:1rem;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
-.pure-alert-close {
+.no-padding .pure-alert {
+	margin-left: var(--normal-margin);
+	margin-right:var(--normal-margin) ;
+}
+
+.pure-alert-close svg{
 	cursor: pointer;
+	background-color: white;
+	width: 25px;
+	height: 25px;
+	display: block;
+	border-radius: 50%;	
+}
+
+.svg-close {
+	fill: none;
+	stroke: rgb(0, 205, 81);;
+	stroke-width: 0.2rem;
+	vector-effect: non-scaling-stroke;
+}
+
+.pure-alert-error .svg-close {
+	stroke: var(--color-alerte);
 }
 
 #search-result-block {
@@ -590,8 +624,9 @@ details summary {
 }
 
 .md_help {
-	font-size: 1.2rem;
+	font-size: var(--medium-font);
 	padding-bottom: var(--normal-margin);
+	margin-top: 1ch;
 }
 
 .addlink-batch summary {
@@ -755,10 +790,12 @@ th {
 	display: block;
 }
 
-[type="url"], [type="text"], [type="password"], textarea {
+[type="url"], [type="text"], [type="password"], textarea, .toolbar-plugin [type="text"] {
 	border: none;
 	width: 100%;
 	padding: 1ch;
+	padding-top: .5rem;
+	padding-bottom: .5rem;
 	border-radius: var(--border-radius);
 	margin-bottom: 1ch;
 	color: var(--dark-main-color);
@@ -769,22 +806,38 @@ th {
 	background-color: var(--background-color);
 }
 
+@media (min-width:768px) {
+	[type="url"], [type="text"], [type="password"], textarea, .toolbar-plugin [type="text"] {
+	padding-top: .7rem;
+	padding-bottom: .7rem;
+}
+	
+}
+
 .tools-server section [type="text"], .tools-server section [type="text"]:hover, .tools-server section [type="text"]:focus {
 	
 }
 
-.button, [type="submit"],.button-red {
+.button, [type="submit"],.button-red,.bigbutton {
+	display: inline-block;
 	background-color: var(--dark-main-color);
 	border-radius: var(--border-radius);
 	border: 1px solid var(--dark-main-color);
 	color: var(--background-color);
 	cursor: pointer;
-	padding: 1ch;
+	padding-top: .5rem;
+	padding-bottom: .5rem;
 	padding-left: 2ch;
 	padding-right: 2ch;
 	margin-bottom: var(--normal-margin);
 	transition: background 100ms ease-in-out 0s,color 100ms ease-in-out 0s;
 	text-decoration: none;
+}
+
+@media (min-width:768px) {
+	.button, [type="submit"],.button-red,.bigbutton {
+	padding-top: 1ch;
+	padding-bottom: 1ch;		}
 }
 
 .button:hover, [type="submit"]:hover {
@@ -998,10 +1051,9 @@ select {
 
 #search {
 	padding-top: .5rem;
-	padding-bottom: .5rem;
+	padding-bottom: 1rem;
 	padding-left: var(--normal-margin);
 	padding-right: var(--normal-margin);
-	margin-bottom: var(--normal-margin);
 	display: none;
 	flex-direction: row;
 	gap: 1rem;
@@ -1049,11 +1101,12 @@ form .awesomplete {
 	background-color: inherit;
 	padding-left: 0rem;
 	padding-right: 0;
-	display: none;
-}
+	visibility: hidden;
+	position: absolute;
+  }
 
 form [type="text"]::placeholder {
-	color: var(--color06);
+	color: rgba(0, 0, 0, 0.59);
 }
 
 input#tagfilter_value {
@@ -1114,23 +1167,6 @@ input#tagfilter_value {
 	stroke-linecap: round;
 	stroke-linejoin: round;
 	vector-effect: non-scaling-stroke;
-}
-
-.svg-close {
-	fill: none;
-	stroke: var(--color06);
-	stroke-width: 1px;
-	stroke-linecap: round;
-	stroke-linejoin: round;
-	vector-effect: non-scaling-stroke;
-}
-
-#shaarli-success-alert .svg-close {
-	stroke: #00CD51;
-}
-
-#shaarli-errors-alert .svg-close {
-	stroke: red;
 }
 
 .expand-private .svg-line {
@@ -1259,6 +1295,8 @@ a:hover .svg-fill {
 #linklist {
 	flex-grow: 1;
 	padding-bottom: .5rem;
+	margin-top: var(--normal-margin);
+
 }
 
 #linklist header {
@@ -1283,6 +1321,14 @@ a:hover .svg-fill {
 
 .pin-icon {
 	margin-right: .2ch;
+	width: auto;
+	height: 1.2rem;
+}
+
+@media (min-width:768px) {
+.pin-icon {
+	height: 1.5rem;
+}	
 }
 
 #linklist h2 a {
@@ -1320,6 +1366,7 @@ a:hover .svg-fill {
 	object-position: 50% 50%;
 	width: 48px;
 	height: 48px;
+	filter: brightness(95%);
 }
 
 #linklist figure {
@@ -1338,7 +1385,7 @@ a:hover .svg-fill {
 }
 
 .linklist-item {
-	border-bottom: .05rem solid var(--dark-main-color);
+	border-bottom: .05rem solid rgba(0, 0, 0, 0.1);
 	padding-right: 4rem;
 	padding-left: var(--normal-margin);
 	word-wrap: break-word;
@@ -1426,7 +1473,7 @@ a:hover .svg-fill {
 	flex-wrap: wrap;
 	background: none;
 	justify-content: center;
-	align-items: center;
+	align-items: end;
 }
 
 /* Animating + to X */
@@ -2014,16 +2061,18 @@ hr {
 .toolbar-plugin {
 	display: grid;
 	grid-template-columns: 1fr auto;
+	align-items: start;
 	gap: 1rem;
 	flex-direction: row;
 	padding-left: var(--normal-margin);
 	padding-right: var(--normal-margin);
 	padding-bottom: var(--normal-margin);
+	
 }
 
 .toolbar-plugin input {
 	margin: 0;
-	border-radius: var(--border-radius);
+	font-size: var(--small-medium-font);
 }
 
 /* @end */
@@ -2049,6 +2098,10 @@ hr {
 .related_links a {
 	font-weight: bold;
 	text-decoration: underline;
+}
+
+.md-editor>textarea {
+	font-size: 1.6rem !important;
 }
 
 /* @end */
@@ -2206,7 +2259,9 @@ nav#nav-links {
 	padding-right: 0;
 	padding-left: 0;
 }
-#search {
+
+
+#search, .toolbar-plugin {
 	padding-left: 3vw;
 	padding-right: 3vw;	
 }
