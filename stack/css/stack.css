@@ -25,7 +25,7 @@
 	--border-radius: 1rem;
 }
 
-/** {
+/*button,svg,div,article {
 	outline: 1px solid #f3f3f3;
 }*/
 
@@ -658,6 +658,12 @@ details summary {
 	margin-bottom: 0;
 }
 
+.tag-form {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+}
+
 .taglist-container .rename-tag-form {
 	display: none;
 }
@@ -1139,6 +1145,10 @@ input#tagfilter_value {
 	display: flex;
 }
 
+.sub-nav .button {
+	margin-bottom: 0;
+}
+
 .filter-on {
 	background-color: var(--background-color);
 	color: var(--dark-main-color);
@@ -1169,13 +1179,22 @@ input#tagfilter_value {
 	vector-effect: non-scaling-stroke;
 }
 
+
+.plus-cross {
+	width: auto;
+	height: 100%;
+}
+
+.plus-cross .svg-line {
+	stroke-width: 2px;
+	vector-effect: non-scaling-stroke;
+}
+
+
 .expand-private .svg-line {
 	stroke: var(--color-alerte);
 }
 
-.expand-private .svg-fill {
-	fill: var(--color-alerte);
-}
 
 .svg-fill {
 	fill: var(--dark-main-color);
@@ -1310,7 +1329,7 @@ a:hover .svg-fill {
 	color: var(--dark-main-color);
 	display: inline;
 	align-items: center;
-	font-size: 100%;
+	font-size: 75%;
 	font-weight: normal;
 	margin: 0;
 	padding-right: 1rem;
@@ -1319,14 +1338,14 @@ a:hover .svg-fill {
 	text-overflow: ellipsis;
 }
 
-.pin-icon {
+.pin-icon,.private-icon {
 	margin-right: .2ch;
 	width: auto;
 	height: 1.2rem;
 }
 
 @media (min-width:768px) {
-.pin-icon {
+.pin-icon, .private-icon {
 	height: 1.5rem;
 }	
 }
@@ -1386,7 +1405,7 @@ a:hover .svg-fill {
 
 .linklist-item {
 	border-bottom: .05rem solid rgba(0, 0, 0, 0.1);
-	padding-right: 4rem;
+	padding-right: 5rem;
 	padding-left: var(--normal-margin);
 	word-wrap: break-word;
 	position: relative;
@@ -1436,45 +1455,52 @@ a:hover .svg-fill {
 	justify-content: flex-end;
 	list-style: none;
 	margin: 0;
-	margin-bottom: 1ch;
 	padding: 0;
 	gap: 1rem;
-	font-size: 1.2rem;
+	font-size: 1.5rem;
 }
 
 .tags-header-linklist a, .linklist-item .tags a {
+	color: var(--background-color);
 	padding: 1ch;
 	padding-top: .5ch;
 	padding-bottom: .5ch;
-	border-radius: var(--border-radius);
-	background-color: var(--transparent-color);
+	border-radius: .4rem;
+	background-color: var(--dark-main-color);
 	white-space: nowrap;
 	text-decoration: none;
+	border: 1px solid var(--dark-main-color);
 }
 
 .tags-header-linklist a:hover, .linklist-item .tags a:hover {
-	background-color: var(--dark-main-color);
-	color: var(--background-color);
+	background-color: var(--background-color);
+	color: var(--dark-main-color);
 }
 
 .link-expand {
 	position: absolute;
-	right: 0;
-	top: 0;
-	height: 100%;
-	max-height: 5.9rem;
+	right: 7px;
+	top: 7px;
+	height: 15px;
+	width: auto;
 	padding: 0;
 	border: none;
 	z-index: 200;
 	cursor: pointer;
-	width: 44px;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
+	display: block;
 	background: none;
-	justify-content: center;
-	align-items: end;
 }
+
+@media (min-width:768px) {
+	.link-expand {
+	height: 20px;
+	top: 10px;
+	right: var(--normal-margin);
+		
+	}
+	
+}
+
 
 /* Animating + to X */
 
@@ -1647,9 +1673,13 @@ a:hover .svg-fill {
 	padding-bottom: 1.2rem;
 }
 
-#linklist .s_medium_post h2 {
+#linklist .s_medium_post h2,#linklist .s_large_post h2 {
 	white-space: normal;
 	font-family: Dinish;
+}
+
+#linklist .s_medium_post h2, #linklist .s_large_post h2 {
+	font-size: 100%;
 }
 
 #linklist .s_medium_post .url-display {
@@ -1684,16 +1714,21 @@ a:hover .svg-fill {
 
 .tools-template #content {
 	padding-bottom: var(--normal-margin);
+	max-width: 70rem;
 }
 
 .tools-section {
 	margin-bottom: var(--normal-margin);
 }
 
+.tools-section h2 {
+	font-size: 100%;
+}
 
 .tools-section ul {
 	padding: 0;
 	margin: 0;
+	font-size: 2.7rem;
 }
 
 .tools-section li {
@@ -1713,7 +1748,7 @@ a:hover .svg-fill {
 .tools-bookmarklets ul {
 	display: flex;
 	flex-direction: row;
-	gap:var(--normal-margin)
+	gap:var(--normal-margin);
 }
 
 .tools-bookmarklets li {
@@ -2191,7 +2226,6 @@ hr {
 	}
 	
 	#linklist h2 {
-		font-weight: 300;
 		/* Remove the … */
 		white-space: normal;
 	}
@@ -2273,7 +2307,7 @@ nav#nav-links {
 
 #linklist article {
 	padding-left: 3vw;
-	padding-right: 6vw;		
+	padding-right: 7vw;		
 }
 
 #footer {
@@ -2293,3 +2327,14 @@ right: 3vw;
 	margin-right: 3vw;
 }
 }
+
+@media (prefers-color-scheme: dark) {
+	:root {
+	--dark-main-color: white;
+	--background-color: black;
+	--main-color: #3ec904;
+}
+form [type="text"]::placeholder {
+	color: rgba(255, 255, 255, 0.71);
+}
+	}

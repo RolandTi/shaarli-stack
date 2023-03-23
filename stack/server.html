@@ -7,36 +7,31 @@
 	
 	<section>
 		<h3>{'General'|t}</h3>
+		<p><span class="label-desc">{'Index URL'|t} :</span>
+		<a href="{$index_url}" title="{$pagetitle}">{$index_url}
+		</a></p>
+
+		<p><span class="label-desc">{'Base path'|t} :</span>
+		{$base_path}</p>		
+
 		
-		<p><strong>{'Index URL'|t} :</strong> <a href="{$index_url}" title="{$pagetitle}">{$index_url}</a></p>
+		<p><span class="label-desc">{'Client IP'|t} :</span>
+		{$client_ip}</p>		
+
+		<p><span class="label-desc">{'Trusted reverse proxies'|t} :</span>
 		
-		<p><strong>{'Base path'|t} :</strong> {$base_path}</p>
-		
-		<p><strong>{'Client IP'|t} :</strong> {$client_ip}</p>
-		
-		<p><strong>{'Trusted reverse proxies'|t} :</strong></p>
 	    {if="count($trusted_proxies) > 0"}
 		
-		<p>{loop="$trusted_proxies"}
+		{loop="$trusted_proxies"}
 	          {$value}
 			<br>{/loop}
-		</p>
 	    {else}
 		
-		<p>{'N/A'|t}</p>
+		{'N/A'|t}
 	    {/if}
+		</p>
 	</section>
 
-    {include="_inc/server.requirements"}
-	
-	<section>
-		<h3>{'Version'|t}</h3>
-		
-		<p><strong>{'Current version'|t} :</strong> {$current_version}</p>
-		
-		<p><strong>{'Latest release'|t} :</strong> <a href="{$release_url}" title="{'Visit releases page on Github'|t}">{$latest_version}</a></p>
-	</section>
-	
 	<section>
 		<h3>{'Thumbnails'|t}</h3>
 		
@@ -62,6 +57,18 @@
 			<li><a href="{$base_path}/admin/clear-cache?type=thumbnails">{'Clear thumbnails cache'|t}</a></li>
 		</ul>
 	</section>
+
+    {include="_inc/server.requirements"}
+	
+	<section>
+		<h3>{'Version'|t}</h3>
+		
+		<p><strong>{'Current version'|t} :</strong> {$current_version}</p>
+		
+		<p><strong>{'Latest release'|t} :</strong> <a href="{$release_url}" title="{'Visit releases page on Github'|t}">{$latest_version}</a></p>
+	</section>
+	
+
 	
 	{include="_inc/page.footer"}
 </body>
