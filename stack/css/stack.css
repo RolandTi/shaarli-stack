@@ -715,6 +715,7 @@ input.rename-tag-input {
 .cloudtag-container a {
 	flex: 1;
 	background-color: var(--dark-main-color);
+	border: 1px solid var(--dark-main-color);
 	color: var(--background-color);
 	border-radius: 3rem;
 	padding-left: 1ch;
@@ -938,9 +939,15 @@ select {
 }
 
 .daily-entry img {
-	margin-top: 2rem;
-	margin-bottom: 3rem;
-	border-radius: 1rem;
+	margin-bottom: 2rem;
+	border-radius: var(--border-radius);
+	max-width: 10rem;
+	height: auto;
+}
+
+.daily-entry-tags {
+	display: flex;
+	gap:1ch
 }
 
 /* @end */
@@ -1182,9 +1189,18 @@ input#tagfilter_value {
 
 
 .plus-cross {
-	width: auto;
-	height: 100%;
+	width: 100%;
+	height: auto;
+	position: absolute;
+	top: 14.5px;
+	right: 0;
 }
+
+.s_medium_post .plus-cross {
+	top: 31px;
+	
+}
+
 
 .plus-cross .svg-line {
 	stroke-width: 1px;
@@ -1459,7 +1475,7 @@ a:hover .svg-fill {
 	font-size: 1.5rem;
 }
 
-.tags-header-linklist a, .linklist-item .tags a {
+.tags-header-linklist a, .linklist-item .tags a, .label-tag {
 	color: var(--background-color);
 	padding: 1ch;
 	padding-top: .5ch;
@@ -1479,24 +1495,21 @@ a:hover .svg-fill {
 
 .link-expand {
 	position: absolute;
-	right: 7px;
-	top: 7px;
+	right: 5px;
+	top: 0px;
 	height: 100%;
-	width: auto;
+	width: 15px;
 	padding: 0;
 	border: none;
 	z-index: 200;
 	cursor: pointer;
 	display: block;
-	background: blue;
+	background-color: unset;
 }
 
 @media (min-width:768px) {
 	.link-expand {
-	height: 20px;
-	top: 10px;
-	right: var(--normal-margin);
-		
+	right: var(--normal-margin);		
 	}
 	
 }
@@ -1671,6 +1684,7 @@ a:hover .svg-fill {
 #linklist .s_medium_post header {
 	padding-top: 1.2rem;
 	padding-bottom: 1.2rem;
+	min-height: 77px;
 }
 
 #linklist .s_medium_post h2,#linklist .s_large_post h2 {
