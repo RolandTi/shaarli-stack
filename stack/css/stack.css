@@ -572,11 +572,12 @@ details summary {
 	color: var(--dark-main-color);
 	background-color: var(--background-color);
 	display: inline-flex;
-	border-radius: 2rem;
+	border-radius: .5rem;
 	padding: .2rem;
-	padding-left: 1rem;
+	padding-left: .6rem;
 	padding-right: .6rem;
 	align-items: center;
+	text-decoration: none;
 }
 
 #search-result-block .remove svg {
@@ -1186,15 +1187,13 @@ input#tagfilter_value {
 }
 
 .plus-cross .svg-line {
-	stroke-width: 2px;
+	stroke-width: 1px;
 	vector-effect: non-scaling-stroke;
 }
 
-
-.expand-private .svg-line {
-	stroke: var(--color-alerte);
+.private-icon path {
+	fill:var(--color-alerte) ;
 }
-
 
 .svg-fill {
 	fill: var(--dark-main-color);
@@ -1470,6 +1469,7 @@ a:hover .svg-fill {
 	white-space: nowrap;
 	text-decoration: none;
 	border: 1px solid var(--dark-main-color);
+	font-size: 85%;
 }
 
 .tags-header-linklist a:hover, .linklist-item .tags a:hover {
@@ -1481,14 +1481,14 @@ a:hover .svg-fill {
 	position: absolute;
 	right: 7px;
 	top: 7px;
-	height: 15px;
+	height: 100%;
 	width: auto;
 	padding: 0;
 	border: none;
 	z-index: 200;
 	cursor: pointer;
 	display: block;
-	background: none;
+	background: blue;
 }
 
 @media (min-width:768px) {
@@ -2214,8 +2214,8 @@ hr {
 	}
 	
 	#linklist :target {
-		border: .5rem solid var(--dark-main-color);
-	}
+		border: 0 dotted #333;
+		box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;	}
 	
 	#linklist header {
 		display: flex;
