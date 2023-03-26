@@ -192,8 +192,11 @@ list-style-type: disc;
 }
 
 .markdown pre {
-	background-color: rgba(132, 132, 132, 0.2);
+    background-color: var(--dark-main-color);
+    color: var(--background-color);
 	padding: 1ch;
+    padding-left: 1ch;
+    padding-right: 1ch;
 	overflow: auto;
 	border-radius: var(--border-radius);
 }
@@ -211,9 +214,12 @@ list-style-type: disc;
 }
 
 .markdown :not(pre) code {
-	padding: 3px;
-	border-radius: var(--border-radius);
-	background-color: rgba(132, 132, 132, 0.2);
+    padding: 3px;
+    border-radius: var(--border-radius);
+    background-color: var(--dark-main-color);
+    color: var(--background-color);
+    padding-left: 1ch;
+    padding-right: 1ch;
 }
 
 #pageheader .md_help {

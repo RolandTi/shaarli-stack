@@ -1344,7 +1344,7 @@ a:hover .svg-fill {
 	color: var(--dark-main-color);
 	display: inline;
 	align-items: center;
-	font-size: 75%;
+	font-size: 90%;
 	font-weight: normal;
 	margin: 0;
 	padding-right: 1rem;
@@ -1495,7 +1495,7 @@ a:hover .svg-fill {
 
 .link-expand {
 	position: absolute;
-	right: 5px;
+	right: 1.5rem;
 	top: 0px;
 	height: 100%;
 	width: 15px;
