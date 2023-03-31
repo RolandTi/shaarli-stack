@@ -192,17 +192,15 @@ list-style-type: disc;
 }
 
 .markdown pre {
-    background-color: var(--dark-main-color);
-    color: var(--background-color);
+    background-color: rgba(118, 118, 118, 0.2);
 	padding: 1ch;
     padding-left: 1ch;
     padding-right: 1ch;
 	overflow: auto;
-	border-radius: var(--border-radius);
+	font-size: 85%;
 }
 
 .markdown pre code {
-	font-family: "Consolas","Monaco","Andale Mono",monospace;
 	direction: ltr;
 	text-align: left;
 	white-space: pre;
@@ -211,18 +209,17 @@ list-style-type: disc;
 	line-height: 1.7;
 	tab-size: 4;
 	hyphens: none;
-	font-size: 90%;
+	font-weight: 200;
 
 }
 
 .markdown :not(pre) code {
     padding: 3px;
-    border-radius: var(--border-radius);
-    background-color: var(--dark-main-color);
-    color: var(--background-color);
+    background-color: rgba(118, 118, 118, 0.2);
     padding-left: 1ch;
     padding-right: 1ch;
-	font-size: 90%;
+	font-size: 85%;
+	font-weight: 200;
 }
 
 #pageheader .md_help {
