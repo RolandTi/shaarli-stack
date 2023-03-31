@@ -210,7 +210,9 @@ list-style-type: disc;
 	word-break: normal;
 	line-height: 1.7;
 	tab-size: 4;
-	hyphens: none
+	hyphens: none;
+	font-size: 90%;
+
 }
 
 .markdown :not(pre) code {
@@ -220,6 +222,7 @@ list-style-type: disc;
     color: var(--background-color);
     padding-left: 1ch;
     padding-right: 1ch;
+	font-size: 90%;
 }
 
 #pageheader .md_help {
