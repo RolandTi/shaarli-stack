@@ -2348,7 +2348,7 @@ right: 3vw;
 	--background-color: black;
 	--main-color: #3ec904;
 }
-form [type="text"]::placeholder {
-	color: rgba(255, 255, 255, 0.71);
-}
+	form [type="text"]::placeholder {
+		color: unset;
+	}
 	}
