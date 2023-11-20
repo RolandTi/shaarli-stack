@@ -1,8 +1,6 @@
 /* @override 
 	https://liens.rolandtisserand.fr/tpl/stack/css/stack.css?*
-	https://shaarli-dev:8890/tpl/stack/css/stack.css?*
-	https://shaarli-dev:8890/tpl/stack/css/stack.css?*
-	https://23-liens.local:8890/tpl/stack/css/stack.css?*
+	https://23-shaarli-stack:8890/tpl/stack/css/stack.css?*
  */
 
 :root {
@@ -25,6 +23,8 @@
 	--small-medium-font: 1.5rem;
 	--border-radius: 1rem;
 }
+
+/*Rules for debugging purpose*/
 
 /*button,svg,div,article {
 	outline: 1px solid #f3f3f3;
@@ -1722,7 +1722,6 @@ a:hover .svg-fill {
 	}
 	
 	.s_large_post .linklist-link {
-		font-weight: bold;
 		padding-right: 3rem;
 	}
 }
@@ -1919,6 +1918,19 @@ a:hover .svg-fill {
 	display: none;
 }
 
+.subheader-form .item_action {
+	font-size: 1.2rem;
+	transition: background 200ms ease-in-out 0s;
+	color: var(--dark-main-color);
+	background-color: var(--background-color);
+	border-radius: var(--border-radius);
+	padding: 1ch;
+	padding-left: 2ch;
+	padding-right: 2ch;
+	text-decoration: none;
+	margin-bottom: 0;
+}
+
 .subheader-form.open {
 	visibility: visible;
 	display: block;
@@ -1934,16 +1946,12 @@ a:hover .svg-fill {
 }
 
 .subheader-form .item_action {
-	font-size: 1.2rem;
-	transition: background 200ms ease-in-out 0s;
-	color: var(--dark-main-color);
 	background-color: var(--background-color);
 	border-radius: var(--border-radius);
 	padding: 1ch;
 	padding-left: 2ch;
 	padding-right: 2ch;
 	text-decoration: none;
-	margin-bottom: 0;
 }
 
 .subheader-form .item_action:hover {
@@ -2302,7 +2310,8 @@ hr {
 
 @media (min-width:1200px) {
 #the-header {
-	padding-top: 3vh;
+	padding-top: 3vw;
+
 }
 
 nav#nav-links {
@@ -2347,11 +2356,13 @@ right: 3vw;
 @media (prefers-color-scheme: dark) {
 	:root {
 		--dark-main-color: white;
-		--background-color: black;
+		--background-color: #040404a6;
 		--main-color: #3ec904;
 	}
 	
 	form [type="text"]::placeholder {
 		color: unset;
 	}
+	
+	
 }

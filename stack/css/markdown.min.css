@@ -1,8 +1,7 @@
 /* @override 
 	https://shaarli:8890/tpl/chaaplin/css/markdown.min.css?*
 	https://liens.rolandtisserand.fr/tpl/bubbles/css/markdown.min.css?*
-	https://liens.rolandtisserand.fr/tpl/stack/css/markdown.min.css?*
-	https://23-liens.local:8890/tpl/stack/css/markdown.min.css?* */
+	https://liens.rolandtisserand.fr/tpl/stack/css/markdown.min.css?* */
 
 
 .markdown img {
@@ -24,18 +23,17 @@
 }
 
 .markdown h2 {
-	font-size: 150% !important;
+	font-size: 2em !important;
 	color: inherit !important;
-	font-weight: 600 !important;
 }
 
 .markdown h3 {
-	font-size: 125%;
+	font-size: 1.5em;
 	margin-bottom: 1ch;
-	font-weight: 600 !important;
 }
 
 .markdown h4 {
+	font-size: 1.2em
 }
 
 .markdown h5 {
