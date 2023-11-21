@@ -805,14 +805,10 @@ th {
 	padding: 1ch;
 	padding-top: .5rem;
 	padding-bottom: .5rem;
-	border-radius: var(--border-radius);
 	margin-bottom: 1ch;
-	color: var(--dark-main-color);
-	border: 1px solid var(--dark-main-color);
-	border-bottom: 3px solid var(--dark-main-color);
-	box-shadow: 0 0 0 0px rgb(0 0 0 / 0%);
 	transition: box-shadow .1s ease-in-out 0s;
-	background-color: var(--background-color);
+	background-color: rgba(0, 0, 0, 0.06);
+	border-bottom: 1px solid var(--dark-main-color);
 }
 
 @media (min-width:768px) {
@@ -830,17 +826,17 @@ th {
 .button, [type="submit"],.button-red,.bigbutton {
 	display: inline-block;
 	background-color: var(--dark-main-color);
-	border-radius: var(--border-radius);
 	border: 1px solid var(--dark-main-color);
 	color: var(--background-color);
 	cursor: pointer;
 	padding-top: .5rem;
 	padding-bottom: .5rem;
-	padding-left: 2ch;
-	padding-right: 2ch;
+	padding-left: 1ch;
+	padding-right: 1ch;
 	margin-bottom: var(--normal-margin);
 	transition: background 100ms ease-in-out 0s,color 100ms ease-in-out 0s;
 	text-decoration: none;
+	border-radius: .4rem;
 }
 
 @media (min-width:768px) {
@@ -1330,7 +1326,6 @@ a:hover .svg-fill {
 #linklist {
 	flex-grow: 1;
 	padding-bottom: .5rem;
-	margin-top: var(--normal-margin);
 
 }
 
@@ -1372,7 +1367,7 @@ a:hover .svg-fill {
 }
 
 .s_medium_post .linklist-link,.s_large_post .linklist-link {
-		font-weight: bold;
+/*		font-weight: bold;*/
 }
 
 #linklist .url-display {
@@ -2353,7 +2348,7 @@ right: 3vw;
 }
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
 	:root {
 		--dark-main-color: white;
 		--background-color: #040404a6;
@@ -2363,6 +2358,14 @@ right: 3vw;
 	form [type="text"]::placeholder {
 		color: unset;
 	}
+	
+	[type="url"], [type="text"], [type="password"], textarea, .toolbar-plugin [type="text"] {
+	background-color: rgba(139, 139, 139, 0.27);
+		border-bottom: 1px solid black;
+				color: unset;
+
+
+}
 	
 	
 }
