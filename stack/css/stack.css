@@ -2348,7 +2348,7 @@ right: 3vw;
 }
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
 	:root {
 		--dark-main-color: white;
 		--background-color: #040404a6;
