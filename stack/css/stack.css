@@ -1046,6 +1046,10 @@ select {
 	background-color: var(--main-color);
 }
 
+#shaarli-menu-shaare-note {
+	background-color: var(--main-color);
+}
+
 #nav-links li a:hover {
 	background-color: var(--dark-main-color);
 	color: var(--background-color);
@@ -1335,6 +1339,7 @@ a:hover .svg-fill {
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 }
+
 
 #linklist h2 {
 	color: var(--dark-main-color);
@@ -2262,13 +2267,10 @@ hr {
 	
 	.linklist-item {
 		font-size: 125%;
-		transition: padding 100ms ease-in-out 0s;
 	}
 	
 	.linklist-item:hover {
-		/*		outline: 2px solid var(--dark-main-color);*/
-		transition: padding 100ms ease-in-out 0s;
-		padding-left: 3rem;
+		background-color: rgba(0, 0, 0, 0.05);
 	}
 	
 	.link_footer {

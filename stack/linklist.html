@@ -83,7 +83,11 @@
 		      {ignore}End of translations{/ignore}
 
 {loop="links"}
-		
+
+{if="$conf->get('config.STACK_DEFAULT_UI')"}
+{$defaultUI=$conf->get('config.STACK_DEFAULT_UI')}
+{/if}
+	
 <article class="anchor linklist-item{if="$value.class"} {$value.class}{/if} {if="$value.sticky"}pinned{/if} {if="count($links)==1"}full-post{/if}" data-id="{$value.id}" id="{$value.shorturl}">							
 	<header>
 		 {if="$thumbnails_enabled && $value.thumbnail !== false"}
@@ -255,7 +259,10 @@ toggle_filters.addEventListener("click", toggleFilters, false);
 	const s_ui_small = document.querySelector('.s_ui_small');
 	const s_ui_medium = document.querySelector('.s_ui_medium');
 	const s_ui_large = document.querySelector('.s_ui_large');
-	const active_sml = "sml-active";
+	const s_json_ui = {if="$defaultUI"}'{$defaultUI}'{else}null{/if};
+
+
+	//const active_sml = "sml-active";
 	
 	// Small UI Button activation
 	s_ui_small.addEventListener("click", function() {
@@ -284,13 +291,14 @@ toggle_filters.addEventListener("click", toggleFilters, false);
 		});
 	});
 	
-	// Check if S/M/L config exist
-	if (localStorage.getItem("SML") === "small") {
+	// Check if S/M/L config exist in localStorage
+	if (localStorage.getItem("SML") === "small")  {
 		linkContent.forEach(el => {
 			el.classList.add('s_small_post');
 		});
 	}
 	
+//	else if ((localStorage.getItem("SML") === "medium") || (s_json_ui === "medium")) {
 	else if (localStorage.getItem("SML") === "medium") {
 		linkContent.forEach(el => {
 			el.classList.add('s_medium_post');
@@ -302,6 +310,27 @@ toggle_filters.addEventListener("click", toggleFilters, false);
 			el.classList.add('s_large_post');
 		});
 	}
+	
+	else if (localStorage.getItem("SML") === null) {
+		if (s_json_ui === "small")  {
+			linkContent.forEach(el => {
+				el.classList.add('s_small_post');
+			});
+		}
+		else if (s_json_ui === "medium") {
+			linkContent.forEach(el => {
+				el.classList.add('s_medium_post');
+			});
+		}
+		
+		else if (s_json_ui === "large") {
+			linkContent.forEach(el => {
+				el.classList.add('s_large_post');
+			});
+		}
+	}
+	
+
 })() 
 
 </script>

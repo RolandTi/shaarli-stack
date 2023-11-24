@@ -7,8 +7,8 @@
 	        <a href="#" class="actions-change-visibility item_action" data-visibility="private">{'Set private'|t}</a>
 			<a href="#" class="subheader-opener button item_action" data-open-id="bulk-tag-action-add">{'Add tags'|t}</a>
 			<a href="#" class="subheader-opener button item_action" data-open-id="bulk-tag-action-delete">{'Delete tags'|t}</a>
-		</div>
-	</div>
+		</div><!--end subheader_item_actions-->
+	</div><!--end subheader-form-->
 
 	
 	{$addDelete=['add', 'delete']}
@@ -44,10 +44,12 @@
 			<li><!--<a href="{$titleLink}">--><span class="shaarli_title">{$shaarlititle}</span><!--</a>--></li>
 			{if="$is_logged_in || $openshaarli"}
 			<!-- ADD SHAARE -->
-			<li><a href="{$base_path}/admin/add-shaare" id="shaarli-menu-shaare">{'Shaare'|t}</a>
-			</li>
+			<li><a href="{$base_path}/admin/add-shaare" id="shaarli-menu-shaare">{'Shaare'|t}</a></li>
 			{/if}
-		
+			{$noteEnabled=!empty($conf->get('config.STACK_NOTE')) ? $conf->get('config.STACK_NOTE') : false}
+            {if="$noteEnabled && $is_logged_in"}
+             <li><a href="{$base_path}/admin/shaare?post=" id="shaarli-menu-shaare-note">+ Note</a></li>
+            {/if}		
 			<!-- HOMELINK -->
 			<li><a href="{$titleLink}" id="shaarli-menu-home">{'My links'|t}</a></li>
 		
@@ -58,7 +60,10 @@
 			<li><a href="{$base_path}/picture-wall?{function="ltrim($searchcrits, '&')"}" id="shaarli-menu-picwall">{'pics'|t}</a></li>
 			{/if}
 			<!-- DAILY -->
-			<li><a href="{$base_path}/daily" id="shaarli-menu-daily">{'Daily'|t}</a></li>
+			{$dailyDisabled=!empty($conf->get('config.STACK_DAILY')) ? $conf->get('config.STACK_DAILY') : false}
+            {if="!$dailyDisabled"}
+             <li><a href="{$base_path}/daily" id="shaarli-menu-daily">{'Daily'|t}</a></li>
+            {/if}
 			<!-- PLUGINS -->			
 			 {loop="$plugins_header.buttons_toolbar"}
 			<li>
