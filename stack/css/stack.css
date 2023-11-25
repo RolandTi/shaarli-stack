@@ -20,7 +20,7 @@
 	--color-alerte: #FF353B;
 	--small-font: 1.2rem;
 	--medium-font: 1.2rem;
-	--small-medium-font: 1.5rem;
+	--small-medium-font: 1.7rem;
 	--border-radius: 1rem;
 }
 
@@ -1345,7 +1345,7 @@ a:hover .svg-fill {
 	color: var(--dark-main-color);
 	display: inline;
 	align-items: center;
-	font-size: 90%;
+	font-size: inherit;
 	font-weight: normal;
 	margin: 0;
 	padding-right: 1rem;
@@ -1711,18 +1711,22 @@ a:hover .svg-fill {
 	display: block;
 }
 
+	.linklist-item.s_large_post {
+padding-bottom: 1rem;
+margin-bottom: 1rem;	}
+	
+
 @media (min-width:768px) {
 	.linklist-item.s_large_post {
 		padding-left: 3rem;
 		padding-top: 1.8rem;
+		padding-bottom: 3rem;
 	}
 	
-	.linklist-item.s_large_post:hover {
-		padding-left: 3rem;
-	}
 	
 	.s_large_post .linklist-link {
 		padding-right: 3rem;
+		font-weight: bold;
 	}
 }
 
@@ -1842,6 +1846,7 @@ a:hover .svg-fill {
 	/* Astuce pour placer le footer en pied de page *!/
 	padding-top:var(--normal-margin) ;
 	padding-bottom: var(--normal-margin);*/
+	margin-bottom: 3rem;
 }
 
 .footer-ours {
@@ -2356,18 +2361,22 @@ right: 3vw;
 		--background-color: #040404a6;
 		--main-color: #3ec904;
 	}
+
 	
 	form [type="text"]::placeholder {
 		color: unset;
 	}
 	
 	[type="url"], [type="text"], [type="password"], textarea, .toolbar-plugin [type="text"] {
-	background-color: rgba(139, 139, 139, 0.27);
+		background-color: rgba(139, 139, 139, 0.27);
 		border-bottom: 1px solid black;
-				color: unset;
-
-
-}
+		color: unset;
+	}
 	
-	
+	.linklist-item {
+		border-bottom: .05rem solid rgba(255, 255, 255, 0.23);
+	}
+	.linklist-item:hover {
+		background-color: rgba(255, 255, 255, 0.10);
+	}
 }

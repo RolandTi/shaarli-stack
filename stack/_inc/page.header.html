@@ -46,7 +46,7 @@
 			<!-- ADD SHAARE -->
 			<li><a href="{$base_path}/admin/add-shaare" id="shaarli-menu-shaare">{'Shaare'|t}</a></li>
 			{/if}
-			{$noteEnabled=!empty($conf->get('config.STACK_NOTE')) ? $conf->get('config.STACK_NOTE') : false}
+			{$noteEnabled=!empty($conf->get('config.STACK_SHOW_NOTE')) ? $conf->get('config.STACK_SHOW_NOTE') : false}
             {if="$noteEnabled && $is_logged_in"}
              <li><a href="{$base_path}/admin/shaare?post=" id="shaarli-menu-shaare-note">+ Note</a></li>
             {/if}		
@@ -60,7 +60,7 @@
 			<li><a href="{$base_path}/picture-wall?{function="ltrim($searchcrits, '&')"}" id="shaarli-menu-picwall">{'pics'|t}</a></li>
 			{/if}
 			<!-- DAILY -->
-			{$dailyDisabled=!empty($conf->get('config.STACK_DAILY')) ? $conf->get('config.STACK_DAILY') : false}
+			{$dailyDisabled=!empty($conf->get('config.STACK_HIDE_DAILY')) ? $conf->get('config.STACK_HIDE_DAILY') : false}
             {if="!$dailyDisabled"}
              <li><a href="{$base_path}/daily" id="shaarli-menu-daily">{'Daily'|t}</a></li>
             {/if}
