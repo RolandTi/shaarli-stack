@@ -716,7 +716,6 @@ input.rename-tag-input {
 .cloudtag-container a {
 	flex: 1;
 	background-color: var(--dark-main-color);
-	border: 1px solid var(--dark-main-color);
 	color: var(--background-color);
 	border-radius: 3rem;
 	padding-left: 1ch;
@@ -728,6 +727,7 @@ input.rename-tag-input {
 	display: flex;
 	align-content: center;
 	text-decoration: none;
+	transition: background 200ms ease-in-out 0s,color 200ms ease-in-out 0s;
 }
 
 .cloudtag-container a span {
@@ -740,6 +740,7 @@ input.rename-tag-input {
 .cloudtag-container a:hover {
 	color: var(--dark-main-color);
 	background-color: var(--background-color);
+	transition: background 200ms ease-in-out 0s,color 200ms ease-in-out 0s;
 }
 
 /* @end */
@@ -826,7 +827,7 @@ th {
 .button, [type="submit"],.button-red,.bigbutton {
 	display: inline-block;
 	background-color: var(--dark-main-color);
-	border: 1px solid var(--dark-main-color);
+	border: 0px solid var(--dark-main-color);
 	color: var(--background-color);
 	cursor: pointer;
 	padding-top: .5rem;
@@ -834,7 +835,7 @@ th {
 	padding-left: 1ch;
 	padding-right: 1ch;
 	margin-bottom: var(--normal-margin);
-	transition: background 100ms ease-in-out 0s,color 100ms ease-in-out 0s;
+	transition: background 200ms ease-in-out 0s,color 200ms ease-in-out 0s;
 	text-decoration: none;
 	border-radius: .4rem;
 }
@@ -848,7 +849,7 @@ th {
 .button:hover, [type="submit"]:hover {
 	color: var(--dark-main-color);
 	background-color: var(--background-color);
-	transition: background 100ms ease-in-out 0s,color 100ms ease-in-out 0s;
+	transition: background 200ms ease-in-out 0s,color 200ms ease-in-out 0s;
 }
 
 
@@ -1099,12 +1100,12 @@ select {
 
 form input[type="text"]:hover, textarea:hover, input[type="url"]:hover {
 	box-shadow: 0 0 0 4px rgb(0 0 0 / 35%);
-	transition: box-shadow .1s ease-in-out 0s
+	transition: box-shadow 200ms ease-in-out 0s
 }
 
 form input[type="text"]:focus, textarea:focus, input[type="url"]:focus {
 	box-shadow: 0 0 0 4px rgb(0 0 0 / 35%);
-	transition: box-shadow .1s ease-in-out 0s
+	transition: box-shadow 200ms ease-in-out 0s
 }
 
 form .awesomplete {
@@ -1365,6 +1366,7 @@ a:hover .svg-fill {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	width: 100%;
 }
 
 .pin-icon,.private-icon {
@@ -1502,13 +1504,14 @@ a:hover .svg-fill {
 	background-color: var(--dark-main-color);
 	white-space: nowrap;
 	text-decoration: none;
-	border: 1px solid var(--dark-main-color);
 	font-size: 85%;
+	transition: background 200ms ease-in-out 0s,color 200ms ease-in-out 0s;
 }
 
 .tags-header-linklist a:hover, .linklist-item .tags a:hover {
 	background-color: var(--background-color);
 	color: var(--dark-main-color);
+	transition: background 200ms ease-in-out 0s,color 200ms ease-in-out 0s;
 }
 
 .link-expand {
@@ -2140,7 +2143,7 @@ hr {
 .toolbar-plugin {
 	display: grid;
 	grid-template-columns: 1fr auto;
-	align-items: start;
+	align-items: stretch;
 	gap: 1rem;
 	flex-direction: row;
 	padding-left: var(--normal-margin);
@@ -2150,8 +2153,7 @@ hr {
 }
 
 .toolbar-plugin input {
-	margin: 0;
-	font-size: var(--small-medium-font);
+	margin: 0 !important;
 }
 
 /* @end */
