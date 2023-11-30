@@ -1154,6 +1154,19 @@ input#tagfilter_value {
 	display: flex;
 }
 
+@media (max-width:768px) {
+	/* On mobile view, compact filters on a single scrollable line */
+	.sub-nav {
+		flex-wrap: nowrap;
+		white-space: nowrap;
+		max-width: 9100vw;
+		overflow-x: scroll;
+		justify-content: space-between;
+		padding-bottom: var(--normal-margin);
+	}
+
+}
+
 .sub-nav .button {
 	margin-bottom: 0;
 }
