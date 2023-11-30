@@ -12,11 +12,7 @@
 	--normal-margin: 1rem;
 	--input-padding: .5rem;
 	--translucide: rgba(255, 255, 255, 0.62);
-	--color00: rgb(255, 255, 255);
-	--color10: rgb(246, 246, 246);
 	--color01: #f0f0f4;
-	--color02: #D8D8DC;
-	--color06: #6C6C70;
 	--color-alerte: #FF353B;
 	--small-font: 1.2rem;
 	--medium-font: 1.2rem;
@@ -32,7 +28,6 @@
 
 @media (min-width:768px) {
 	:root {
-		--small-font: 1.2rem;
 		--small-medium-font: unset;
 		--medium-font: 1.5rem;
 	}
