@@ -1718,6 +1718,10 @@ a:hover .svg-fill {
 
 /* Large Post */
 
+	.linklist-item.s_large_post:hover {
+		background-color: unset;
+	}
+
 #linklist .s_large_post .url-display {
 	display: block;
 }
