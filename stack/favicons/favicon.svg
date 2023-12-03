@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="700.000000pt" height="700.000000pt" viewBox="0 0 700.000000 700.000000"
+ preserveAspectRatio="xMidYMid meet">
+	<style>
+		.fill {fill:#000000;}
+		@media (prefers-color-scheme: dark) {
+		.fill {fill:white;}
+		}
+	</style>
+	<g transform="translate(0.000000,700.000000) scale(0.100000,-0.100000)"
+	fill="#000000" stroke="none">
+		<path d="M1100 5942 c-7 -3 -10 -200 -10 -567 l0 -563 2410 0 2410 0 0 566 0
+		567 -2400 0 c-1320 0 -2404 -1 -2410 -3z" class="fill" />
+		<path d="M1094 4081 c-2 -2 -4 -257 -4 -566 l0 -562 2408 1 2407 1 0 565 0
+		564 -2403 1 c-1322 0 -2406 -2 -2408 -4z" class="fill" />
+		<path d="M1090 1659 l0 -565 2408 0 2407 1 0 565 0 564 -2408 1 -2407 0 0
+		-566z" class="fill" />
+	</g>
+</svg>
