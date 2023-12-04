@@ -1,4 +1,4 @@
-{if="count($links)>1"}
+
 <div id="linklist-paging">{if="!empty($action_plugin)"}
       {loop="$action_plugin"}
         {$value.attr.class=isset($value.attr.class) ? $value.attr.class : ''}
@@ -11,7 +11,7 @@
         </a>
       {/loop}
     {/if}
-	
+{if="count($links)>1"}	
 	<div class="navigation">{if="$previous_page_url"}
 		<a href="{$previous_page_url}" class="icon_button">
 			<svg viewBox="0 0 26 26" width="26" height="26">
@@ -53,5 +53,5 @@
 				</li>
 			</ul>
 		</div> <!--Fin .linksperpage-->
-</div>
  {/if}
+</div><!--Fin #linklist-paging-->
