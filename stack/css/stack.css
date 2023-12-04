@@ -1,6 +1,6 @@
 /* @override 
 	https://liens.rolandtisserand.fr/tpl/stack/css/stack.css?*
-	https://23-shaarli-stack:8890/tpl/stack/css/stack.css?*
+	https://23-shaarli-stack.local:8890/tpl/stack/css/stack.css?*
  */
 
 :root {
@@ -508,7 +508,6 @@ details summary {
 	padding-left: 1ch;
 	padding-right: 1ch;
 	border-radius: var(--border-radius);
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 	
 }
 
@@ -520,7 +519,6 @@ details summary {
 	align-items: center;
 	align-content: center;
 	gap:1rem;
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
 .no-padding .pure-alert {
@@ -535,6 +533,7 @@ details summary {
 	height: 25px;
 	display: block;
 	border-radius: 50%;	
+	padding: 3px;
 }
 
 .svg-close {
@@ -805,6 +804,7 @@ th {
 	transition: box-shadow .1s ease-in-out 0s;
 	background-color: rgba(0, 0, 0, 0.06);
 	border-bottom: 1px solid var(--dark-main-color);
+	border-radius: 0px;
 }
 
 @media (min-width:768px) {
@@ -1270,9 +1270,11 @@ a:hover .svg-fill {
 
 #linklist-paging {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
+	align-items: center;
 	padding: var(--normal-margin);
+	gap:2rem;
 }
 
 .navigation {
@@ -1906,6 +1908,10 @@ margin-bottom: 1rem;	}
 	transform: translateY(0rem);
 }
 
+.picwall-container a {
+	text-decoration: none;
+}
+
 .picwall-container figure:hover {
 	transform: translateY(-.5rem);
 }
@@ -2292,6 +2298,7 @@ hr {
 		background-color: rgba(0, 0, 0, 0.05);
 	}
 	
+	
 	.link_footer {
 		display: flex;
 		justify-content: start;
@@ -2311,6 +2318,11 @@ hr {
 	.tools-bookmarklets {
 		display: block;
 	}
+	
+	#linklist-paging {
+	flex-direction: row;
+	gap:2rem;
+}
 	
 	/* Retirer le padding ajouté sur la version smartphone */
 	
