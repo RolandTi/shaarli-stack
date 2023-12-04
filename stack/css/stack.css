@@ -428,7 +428,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	background-color: var(--background-color);
 }
 
 main {
@@ -1146,9 +1145,11 @@ input#tagfilter_value {
 	padding: 1ch;
 }
 
-.sub-nav.active {
+.sub-nav.active, .sub-nav:has(.filter-on) {
 	display: flex;
 }
+
+
 
 @media (max-width:768px) {
 	/* On mobile view, compact filters on a single scrollable line */
@@ -1169,6 +1170,7 @@ input#tagfilter_value {
 
 .filter-on {
 	background-color: var(--background-color);
+	background-color: var(--main-color);
 	color: var(--dark-main-color);
 }
 
@@ -2384,7 +2386,7 @@ right: 3vw;
 @media (prefers-color-scheme: dark) {
 	:root {
 		--dark-main-color: white;
-		--background-color: #040404a6;
+		--background-color: #202124;
 		--main-color: #3ec904;
 	}
 
