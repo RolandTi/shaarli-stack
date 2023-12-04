@@ -84,6 +84,7 @@ Your `data/config.json.php ` should look like :
 * playvideos
 * qrcode
 * wallabag
+* readitlater
 
 ## 🏗 Installation
 
