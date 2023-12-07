@@ -51,6 +51,8 @@
 	const headerElement = document.body;
 	const headerColor = window.getComputedStyle(headerElement, null);
 	let bgColor = headerColor.getPropertyValue("background-color");
+	console.log(bgColor);
 	document.querySelector('meta[name="theme-color"]').setAttribute('content', bgColor);
 })();
+
 </script>

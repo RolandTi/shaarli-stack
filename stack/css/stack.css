@@ -428,6 +428,8 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	background-color: var(--background-color);
+	/* Need to keep this background-color for the javascript matching theme-color */
 }
 
 main {
@@ -1145,7 +1147,11 @@ input#tagfilter_value {
 	padding: 1ch;
 }
 
-.sub-nav.active, .sub-nav:has(.filter-on) {
+.sub-nav.active {
+	display: flex;
+}
+/* 231207 - Need a separate declaration for firefox.*/
+.sub-nav:has(.filter-on) {
 	display: flex;
 }
 
@@ -2157,6 +2163,7 @@ hr {
 /* @end */
 
 .favorite-tag, [title^='Filter ReadItLater bookmarks'] {
+	display: inline-block;
 	padding-top: .5rem;
 	padding-bottom: .5rem;
 	padding-left: 1ch;
@@ -2167,6 +2174,16 @@ hr {
 	white-space: nowrap;
 	transition: background 200ms ease-in-out 0s,color 200ms ease-in-out 0s;
 	text-decoration: none;
+}
+
+.readitlater-toggle {
+	text-decoration: none;
+}
+
+@media (min-width:768px) {
+	.favorite-tag, [title^='Filter ReadItLater bookmarks'] {
+	padding-top: 1ch;
+	padding-bottom: 1ch;		}
 }
 
 .favorite-tag {

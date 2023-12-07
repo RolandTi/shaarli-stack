@@ -146,6 +146,19 @@
   <a href="{$base_path}/untagged-only" aria-label="{'Filter untagged links'|t}" title="{'Filter untagged links'|t}"
      class="button {if="$untaggedonly"}filter-on{else}filter-off{/if}"
   >{'Filter untagged links'|t}</a>
+{if="!empty($action_plugin)"}
+{loop="$action_plugin"}
+  {$value.attr.class=isset($value.attr.class) ? $value.attr.class : ''}
+  {$value.attr.class=!empty($value.on) ? $value.attr.class .' filter-on' : $value.attr.class .' filter-off'}
+  <a
+    {loop="$value.attr"}
+      {$key}="{$value}"
+    {/loop}>
+    {$value.html}
+  </a>
+{/loop}
+{/if}
+  
 </div>
 <!-- FILTERS:END -->			
 
