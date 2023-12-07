@@ -2,6 +2,8 @@
 
 <footer id="footer" class="footer-container">
 	<div class="footer-ours infos-font">
+	<details>
+	  <summary>Shaarli</summary>
 	{if="!empty($linkcount)"}
 	  {$linkcount} {function="t('shaare', 'shaares', $linkcount)"}
 	  {if="$privateLinkcount>0"} &middot; {$privateLinkcount} {function="t('private link', 'private links', $privateLinkcount)"}
@@ -17,6 +19,7 @@
 	      {loop="$plugins_footer.text"}
 	          {$value}
 			  {/loop} &middot; Theme : <a href="https://github.com/RolandTi/shaarli-stack">Stack</a> &middot; Font : <a href="https://github.com/playbeing/dinish">DINish</a> 
+	</details>
 	</div>
 </footer>
 

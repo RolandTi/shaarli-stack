@@ -394,6 +394,7 @@ summary {
 .awesomplete li {
 	padding-bottom: .5rem;
 	padding: .5rem;
+	cursor: pointer;
 }
 
 .awesomplete > ul {
