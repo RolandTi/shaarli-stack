@@ -1169,7 +1169,6 @@ input#tagfilter_value {
 }
 
 .filter-on {
-	background-color: var(--background-color);
 	background-color: var(--main-color);
 	color: var(--dark-main-color);
 }
@@ -1624,7 +1623,6 @@ a:hover .svg-fill {
 	justify-content: center;
 	gap: 1rem;
 	align-items: center;
-	opacity: .5;
 }
 
 .ctrl-checkbox {
@@ -2014,7 +2012,6 @@ margin-bottom: 1rem;	}
 /* © : https://codepen.io/cbp/pen/BaPXOd */
 
 .switch {
-	box-sizing: border-box;
 	appearance: none;
 	user-select: none;
 	height: 31px;
@@ -2028,7 +2025,7 @@ margin-bottom: 1rem;	}
 	margin: 0;
 	padding: 0;
 	border: none;
-	background-color: var(--background-color);
+	background-color: var(--dark-main-color);
 	transition-duration: 600ms;
 	transition-timing-function: ease-in-out;
 	-webkit-touch-callout: none;
@@ -2038,9 +2035,6 @@ margin-bottom: 1rem;	}
 }
 
 .switch::before {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
 	height: 27px;
 	width: 47px;
 	content: " ";
@@ -2061,7 +2055,6 @@ margin-bottom: 1rem;	}
 }
 
 .switch::after {
-	box-sizing: border-box;
 	height: 27px;
 	width: 27px;
 	content: " ";
@@ -2119,17 +2112,15 @@ margin-bottom: 1rem;	}
 }
 
 .switch::before {
-	background-color: var(--transparent-color);
-	border: 1px solid var(--dark-main-color);
+	background-color: var(--dark-main-color);
 }
 
 .switch::after {
 	background-color: var(--background-color);
-	border: 1px solid var(--dark-main-color);
 }
 
 .switch:checked {
-	background-color: var(--dark-main-color);
+	background-color: var(--main-color);
 }
 
 /* @end */
@@ -2165,17 +2156,22 @@ hr {
 
 /* @end */
 
-.favorite-tag {
-	margin: 1ch;
-	padding: .3ch;
+.favorite-tag, [title^='Filter ReadItLater bookmarks'] {
+	padding-top: .5rem;
+	padding-bottom: .5rem;
 	padding-left: 1ch;
 	padding-right: 1ch;
-	border-radius: 3rem;
+	border-radius: .43rem;
 	background-color: var(--dark-main-color);
 	color: var(--background-color);
 	white-space: nowrap;
 	transition: background 200ms ease-in-out 0s,color 200ms ease-in-out 0s;
 	text-decoration: none;
+}
+
+.favorite-tag {
+	margin-left: .5ch;
+	margin-right: .5ch;
 }
 
 .favorite-tag:hover {
@@ -2188,8 +2184,29 @@ hr {
 	text-decoration: underline;
 }
 
+[title^='Filter ReadItLater bookmarks'].filter-on {
+	background-color: var(--main-color);
+	color: var(--dark-main-color);
+}
+
+[title^='Filter ReadItLater bookmarks'].filter-on:hover {
+	background-color: var(--dark-main-color);
+	color: var(--background-color);
+	
+}
+
 .md-editor>textarea {
 	font-size: 1.6rem !important;
+}
+
+
+#permalinkQrcode.show {
+	position: fixed;
+	top: 5vw;
+	right: 5vw;
+	left: unset;
+	width: 225px;
+    height: 225px;
 }
 
 /* @end */
