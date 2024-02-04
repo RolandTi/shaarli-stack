@@ -18,6 +18,10 @@
 	--medium-font: 1.2rem;
 	--small-medium-font: 1.7rem;
 	--border-radius: 1rem;
+	--margin:3vw;
+	--primary-font:'Dinish',Arial, sans-serif;
+	--secondary-font:'Dinish Condensed',"Arial Narrow", sans-serif;
+	--monospace-font: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
 }
 
 /*Rules for debugging purpose*/
@@ -113,16 +117,7 @@ Improve consistency of default fonts in all browsers. (https://github.com/sindre
 */
 
 body {
-	font-family: 'Dinish Condensed',
-	-apple-system,
-	system-ui,
-	'Segoe UI',
-	Roboto,
-	Helvetica,
-	Arial,
-	sans-serif,
-	'Apple Color Emoji',
-	'Segoe UI Emoji';
+	font-family: var(--secondary-font);
 }
 
 /*
@@ -167,12 +162,7 @@ b, strong {
 */
 
 code, kbd, samp, pre {
-	font-family: ui-monospace,
-	SFMono-Regular,
-	Consolas,
-	'Liberation Mono',
-	Menlo,
-	monospace; /* 1 */
+	font-family: var(--monospace-font); /* 1 */
 	font-size: 1em; /* 2 */
 }
 
@@ -1714,7 +1704,7 @@ a:hover .svg-fill {
 
 #linklist .s_medium_post h2,#linklist .s_large_post h2 {
 	white-space: normal;
-	font-family: Dinish;
+	font-family: var(--primary-font);
 }
 
 #linklist .s_medium_post h2, #linklist .s_large_post h2 {
@@ -2235,16 +2225,7 @@ hr {
 	}
 	
 	body {
-		font-family: 'Dinish',
-		-apple-system,
-		system-ui,
-		'Segoe UI',
-		Roboto,
-		Helvetica,
-		Arial,
-		sans-serif,
-		'Apple Color Emoji',
-		'Segoe UI Emoji';
+		font-family: var(--primary-font);
 	}
 	
 	#the-header {
@@ -2375,46 +2356,46 @@ hr {
 
 @media (min-width:1200px) {
 #the-header {
-	padding-top: 3vw;
+	padding-top: var(--margin);
 
 }
 
 nav#nav-links {
-	padding-right: 3vw;
-	padding-left: 3vw;
+	padding-right: var(--margin);
+	padding-left: var(--margin);
 }
 
 
 #search, .toolbar-plugin {
-	padding-left: 3vw;
-	padding-right: 3vw;	
+	padding-left: var(--margin);
+	padding-right: var(--margin);	
 }
 
 #linklist-paging {
-	padding-left: 3vw;
-	padding-right: 3vw;		
+	padding-left: var(--margin);
+	padding-right: var(--margin);		
 }
 
 #linklist article {
-	padding-left: 3vw;
+	padding-left: var(--margin);
 	padding-right: 7vw;		
 }
 
 #footer {
-	padding-bottom: 3vw;
+	padding-bottom: var(--margin);
 }
 
 .link-expand {
-right: 3vw;	
+right: var(--margin);	
 }
 .container {
-	padding-left: 3vw;
-	padding-right: 3vw;		
+	padding-left: var(--margin);
+	padding-right: var(--margin);		
 }
 
 #search-result-block {
-	margin-left: 3vw;
-	margin-right: 3vw;
+	margin-left: var(--margin);
+	margin-right: var(--margin);
 }
 }
 
