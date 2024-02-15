@@ -1,18 +1,18 @@
 /* @override 
 	https://liens.rolandtisserand.fr/tpl/stack/css/stack.css?*
 	https://23-shaarli-stack.local:8890/tpl/stack/css/stack.css?*
+	https://index.rolandtisserand.fr/tpl/stack/css/stack.css?*
  */
 
 :root {
+	/* CSS Variables matching with the `default colors` plugin */
 	--main-color: #4FFF06;
 	--dark-main-color: black;
 	--background-color: white;
-	--transparent-color: rgba(120, 120, 120, 0.15);
-	--transparent-color-hover: rgba(120, 120, 120, 0.25);
+	/* Other variables */
+	--accent-color: rgba(0, 0, 0, 0.05);
 	--normal-margin: 1rem;
 	--input-padding: .5rem;
-	--translucide: rgba(255, 255, 255, 0.62);
-	--color01: #f0f0f4;
 	--color-alerte: #FF353B;
 	--small-font: 1.2rem;
 	--medium-font: 1.2rem;
@@ -29,6 +29,7 @@
 /*button,svg,div,article {
 	outline: 1px solid #f3f3f3;
 }*/
+
 
 @media (min-width:768px) {
 	:root {
@@ -740,7 +741,7 @@ input.rename-tag-input {
 /* @group Forms */
 
 .form-entry {
-	border-bottom: 1px solid var(--color01);
+	border-bottom: 1px solid var(--accent-color);
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 	display: flex;
@@ -803,7 +804,7 @@ th {
 	padding-bottom: .5rem;
 	margin-bottom: 1ch;
 	transition: box-shadow .1s ease-in-out 0s;
-	background-color: rgba(0, 0, 0, 0.06);
+	background-color: var(--accent-color);
 	border-bottom: 1px solid var(--dark-main-color);
 	border-radius: 0px;
 }
@@ -1118,7 +1119,7 @@ form .awesomplete {
   }
 
 form [type="text"]::placeholder {
-	color: rgba(0, 0, 0, 0.59);
+	color: var(--dark-main-color) !important;
 }
 
 input#tagfilter_value {
@@ -1248,10 +1249,6 @@ a:hover .svg-fill {
 
 .svg-fill-empty {
 	fill: transparent;
-}
-
-.svg-fill-negative {
-	fill: var(--translucide);
 }
 
 .reserve {
@@ -1450,15 +1447,6 @@ a:hover .svg-fill {
 	position: relative;
 }
 
-
-
-/*@media screen and (min-width:1200px) {
-	.linklist-item {
-		padding-left: 5vw;
-		padding-bottom: 2vh;
-		padding-top: 2vh;
-	}
-}*/
 
 .linklist-item:last-child {
 	border-bottom: 0px solid black;
@@ -2326,7 +2314,7 @@ hr {
 	}
 	
 	.linklist-item:hover {
-		background-color: rgba(0, 0, 0, 0.05);
+		background-color: var(--accent-color);
 	}
 	
 	
@@ -2418,11 +2406,7 @@ right: var(--margin);
 		--background-color: #202124;
 		--main-color: #3ec904;
 	}
-
 	
-	form [type="text"]::placeholder {
-		color: unset;
-	}
 	
 	[type="url"], [type="text"], [type="password"], textarea, .toolbar-plugin [type="text"] {
 		background-color: rgba(139, 139, 139, 0.27);
