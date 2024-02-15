@@ -754,9 +754,12 @@ input.rename-tag-input {
 }
 
 .form-entry label {
-	flex-grow: 3;
-	flex-basis: 85%;
 	margin-bottom: 0;
+}
+
+.tools-template .form-entry label {
+	flex-grow: 3;
+	flex-basis: 85%;	
 }
 
 .form-entry select {
@@ -2023,7 +2026,7 @@ margin-bottom: 1rem;	}
 	padding: 0;
 	border: none;
 	background-color: var(--dark-main-color);
-	transition-duration: 600ms;
+	transition-duration: 300ms;
 	transition-timing-function: ease-in-out;
 	-webkit-touch-callout: none;
 	-webkit-text-size-adjust: none;
@@ -2118,6 +2121,10 @@ margin-bottom: 1rem;	}
 
 .switch:checked {
 	background-color: var(--main-color);
+}
+
+#lf_private.switch:checked {
+background-color: var(--color-alerte);	
 }
 
 /* @end */
