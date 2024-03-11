@@ -849,6 +849,10 @@ th {
 	transition: background 200ms ease-in-out 0s,color 200ms ease-in-out 0s;
 }
 
+[type="submit"]:hover {
+	background-color: var(--main-color);
+}
+
 
 .button-red {
 	background-color: var(--color-alerte);
