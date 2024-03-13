@@ -1403,6 +1403,14 @@ a:hover .svg-fill {
 	transition: font-size 100ms ease-out 0s;
 }
 
+/* Show url on Small view - only - on permalink view
+(when .full-post is active */
+#linklist .full-post .url-display {
+	display: block;
+}
+
+
+
 #linklist .active-header .url-display {
 	display: block;
 }
@@ -1694,7 +1702,8 @@ a:hover .svg-fill {
 	transition: opacity .1s ease-in-out 0s;
 }
  
-/* Small Post */
+
+
 /* Medium Post */
 
 #linklist .s_medium_post header {
@@ -2121,8 +2130,9 @@ margin-bottom: 1rem;	}
 	background-color: var(--main-color);
 }
 
+/* Special background color for private switch */
 #lf_private.switch:checked {
-background-color: var(--color-alerte);	
+	background-color: var(--color-alerte);	
 }
 
 /* @end */
