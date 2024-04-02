@@ -247,8 +247,10 @@ const menu_filters = document.querySelector(".sub-nav");
 function toggleFilters() {
 	if (menu_filters.classList.contains("active")) {
 		menu_filters.classList.remove("active");
+		toggle_filters.setAttribute("aria-expanded", false);
 	} else {
 		menu_filters.classList.add("active");
+		toggle_filters.setAttribute("aria-expanded", true);
 	}
 }
 toggle_filters.addEventListener("click", toggleFilters, false);
