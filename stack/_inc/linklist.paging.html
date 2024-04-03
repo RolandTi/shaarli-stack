@@ -13,7 +13,7 @@
     {/if}
 {if="count($links)>1"}	
 	<div class="navigation">{if="$previous_page_url"}
-		<a href="{$previous_page_url}" class="icon_button">
+		<a href="{$previous_page_url}" class="icon_button" aria-label="{'Next page'|t}">
 			<svg viewBox="0 0 26 26" width="26" height="26">
 				<rect width="26" height="26" class="svg-fill-empty" />
 				<polyline class="svg-line" points="10,8.2 4.8,13.4 10,18.6 " />
@@ -25,7 +25,7 @@
 		<span class="pagination">{$page_current} / {$page_max}</span>
 		{/if}
 	    {if="$next_page_url"}
-	    <a href="{$next_page_url}" class="icon_button">
+	    <a href="{$next_page_url}" class="icon_button" aria-label="{'Previous page'|t}">
 			<svg viewBox="0 0 26 26" width="26" height="26">
 				<rect width="26" height="26" class="svg-fill-empty" />
 				<polyline class="svg-line" points="17.3,18.7 22.2,13.4 16.7,8.1 " />
@@ -39,11 +39,11 @@
 			<span class="options-title">{'Links per page'|t}</span>
 			<ul>
 				<li><a href="{$base_path}/links-per-page?nb=20"
-					{if="$links_per_page == 20"}class="selected"{/if}>20</a></li>
+					{if="$links_per_page == 20"}class="selected" aria-current=true{/if}>20</a></li>
 				<li><a href="{$base_path}/links-per-page?nb=50"
-					{if="$links_per_page == 50"}class="selected"{/if}>50</a></li>
+					{if="$links_per_page == 50"}class="selected" aria-current=true{/if}>50</a></li>
 				<li><a href="{$base_path}/links-per-page?nb=100"
-					{if="$links_per_page == 100"}class="selected"{/if}>100</a></li>
+					{if="$links_per_page == 100"}class="selected" aria-current=true{/if}>100</a></li>
 				<li>
 					<form method="GET" action="{$base_path}/links-per-page">
 						<input type="text" name="nb" placeholder="133"
