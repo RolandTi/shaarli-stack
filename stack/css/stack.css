@@ -1988,6 +1988,10 @@ margin-bottom: 1rem;	}
 	color: var(--background-color);
 }
 
+.subheader-form input {
+	background-color: var(--background-color);
+}
+
 .sr-only {
 	position: absolute;
 	width: 1px;
