@@ -1519,7 +1519,7 @@ a:hover .svg-fill {
 .tags-header-linklist {
 	display: none;
 	flex-direction: row;
-	flex-wrap: no-wrap;
+	flex-wrap: wrap;
 	justify-content: flex-end;
 	list-style: none;
 	margin: 0;
