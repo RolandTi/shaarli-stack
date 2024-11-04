@@ -1401,6 +1401,8 @@ a:hover .svg-fill {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	width: 100%;
+	/* Added in v0.9 to go with wrap tags */
+	width: fit-content;
 }
 
 .pin-icon,.private-icon {
@@ -1526,6 +1528,8 @@ a:hover .svg-fill {
 	padding: 0;
 	gap: 1rem;
 	font-size: 1.5rem;
+	padding-top: 1ch;
+	padding-bottom: 1ch;
 }
 
 .tags-header-linklist a, .linklist-item .tags a, .label-tag {
@@ -1744,9 +1748,6 @@ a:hover .svg-fill {
 #linklist .s_medium_post h2,#linklist .s_large_post h2 {
 	white-space: normal;
 	font-family: var(--primary-font);
-}
-
-#linklist .s_medium_post h2, #linklist .s_large_post h2 {
 	font-size: 100%;
 }
 
@@ -2340,6 +2341,7 @@ hr {
 		/*		justify-content: space-between; WHY??*/
 		padding-top: 1.2rem;
 		padding-bottom: 1.2rem;
+		flex-wrap: wrap;
 	}
 	
 	#linklist h2 {
@@ -2354,6 +2356,8 @@ hr {
 	.tags-header-linklist {
 		display: inline-flex;
 		margin-left: auto;
+		align-self: flex-start;
+		
 	}
 	
 	.linklist-item {
