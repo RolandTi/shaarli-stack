@@ -434,6 +434,10 @@ summary {
 	border-radius: 2px;
 }
 
+.awesomplete > ul > li[aria-selected="true"] {
+		background-color: var(--main-color);
+	}
+
 /* @end */
 
 html {
