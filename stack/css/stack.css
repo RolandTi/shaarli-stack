@@ -529,11 +529,12 @@ details summary {
 	margin-bottom: var(--normal-margin);
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: start;
 	gap:1rem;
 	padding-left: 1ch;
 	padding-right: 1ch;
 	border-radius: var(--border-radius);
+	min-height: 6ch;
 	
 }
 
@@ -550,6 +551,10 @@ details summary {
 .no-padding .pure-alert {
 	margin-left: var(--normal-margin);
 	margin-right:var(--normal-margin) ;
+}
+
+.pure-alert-close {
+	margin-left: auto;
 }
 
 .pure-alert-close svg{

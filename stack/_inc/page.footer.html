@@ -6,7 +6,7 @@
 	  <summary>Shaarli</summary>
 	{if="!empty($linkcount)"}
 	  {$linkcount} {function="t('shaare', 'shaares', $linkcount)"}
-	  {if="$privateLinkcount>0"} &middot; {$privateLinkcount} {function="t('private link', 'private links', $privateLinkcount)"}
+	  {if="$is_logged_in===true"}{if="$privateLinkcount>0"} &middot; {$privateLinkcount} {function="t('private link', 'private links', $privateLinkcount)"}{/if}
 	  {/if}
 	  {/if}
 	&middot; <a href="https://github.com/shaarli/Shaarli">Shaarli</a>
