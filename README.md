@@ -1,7 +1,7 @@
 # Stack for Shaarli
 Shaarli Stack is a theme for [Shaarli](https://github.com/shaarli/Shaarli), the personal, minimalist, bookmarking service.
 
-Stack has been updated for Shaarli 0.15.0
+Stack works with Shaarli 0.16.1
 
 You can have a preview here : https://liens.rolandtisserand.fr/ or here (with custom user.css) : https://index.rolandtisserand.fr/
 
